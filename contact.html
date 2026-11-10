@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us · Kerala State Planning Board</title>
+<meta name="description" content="Contact the Kerala State Planning Board, Pattom, Thiruvananthapuram. Right to Information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="pbanner"><div class="wrap">
+    <h1>Contact Us</h1>
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact Us</div>
+  </div></section>
+  <section class="sec" style="padding-top:3rem"><div class="wrap">
+    <div class="contact-grid">
+      <div><span id="i1"></span><b>Address</b><p>Kerala State Planning Board<br>Pattom, Thiruvananthapuram<br>Kerala 695 004</p></div>
+      <div><span id="i2"></span><b>Phone</b><p>0471 254 0208</p><p style="font-size:.85rem;margin-top:.4rem">10:00 am – 5:00 pm on working days</p></div>
+      <div><span id="i3"></span><b>Email</b><p>To be updated from the official directory</p></div>
+    </div>
+    <div class="news">
+      <form class="panel form" id="cf" novalidate style="padding:0">
+        <h3>Send an enquiry</h3>
+        <div class="form" style="padding:1.4rem 1.2rem">
+          <div class="frow"><div class="field"><label for="n">Name</label><input id="n" autocomplete="name"></div><div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="email"></div></div>
+          <div class="field"><label for="sub">Subject</label><select id="sub"><option>General enquiry</option><option>Publications</option><option>Local government planning</option><option>Tenders</option><option>Recruitment</option></select></div>
+          <div class="field"><label for="msg">Message</label><textarea id="msg"></textarea></div>
+          <div class="factions"><button class="btn" type="submit">Submit</button></div>
+        </div>
+      </form>
+      <div class="panel" id="rti"><h3>Right to Information</h3><div class="pad">
+        <p>Applications under the Right to Information Act, 2005 may be submitted to the State Public Information Officer of the Board.</p>
+        <table class="tbl" style="margin-top:.6rem"><tbody>
+          <tr><td><b>State Public Information Officer</b></td><td>To be updated</td></tr>
+          <tr><td><b>Assistant SPIO</b></td><td>To be updated</td></tr>
+          <tr><td><b>Appellate Authority</b></td><td>To be updated</td></tr>
+        </tbody></table>
+      </div></div>
+    </div>
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<script>
+['pin','phone','mail'].forEach(function(n,i){document.getElementById('i'+(i+1)).replaceWith(KP.ico(n))});
+document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();
+  var ok=['n','em','msg'].every(function(id){return document.getElementById(id).value.trim()});
+  KP.toast(ok?'Thank you. Your enquiry has been noted (demo — not sent).':'Please fill in your name, email and message.');if(ok)e.target.reset();});
+</script>
+</body>
+</html>

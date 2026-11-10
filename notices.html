@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notices · Kerala State Planning Board</title>
+<meta name="description" content="News, circulars, tenders and recruitment notices of the Kerala State Planning Board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="pbanner"><div class="wrap">
+    <h1>Notices</h1>
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Notices</div>
+  </div></section>
+  <section class="sec" style="padding-top:3rem"><div class="wrap" style="max-width:60rem">
+    <div class="tabs" role="tablist" id="ntabs"></div>
+    <div class="nlist" id="nlist" role="tabpanel"></div>
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<script>
+(function(){
+var K=KP,types=['All','News','Circular','Tender','Recruitment'],labels={All:'All',News:'News & Events',Circular:'Circulars & Orders',Tender:'Tenders',Recruitment:'Recruitment'};
+var cur=types.indexOf(location.hash.slice(1))>0?location.hash.slice(1):'All';
+var tabs=document.getElementById('ntabs'),list=document.getElementById('nlist');
+types.forEach(function(t){tabs.append(K.h('button',{type:'button',role:'tab','data-t':t,onclick:function(){cur=t;paint();}},labels[t]));});
+function paint(){
+  tabs.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.t===cur))});
+  list.innerHTML=K.NOTICES.filter(function(n){return cur==='All'||n.type===cur}).sort(function(a,b){return a.date<b.date?1:-1}).map(function(n){
+    return '<div class="nitem"><span class="d">'+K.fdate(n.date)+'</span><div><b>'+n.title+(K.isNew(n.date)?'<span class="new">NEW</span>':'')+'</b><p>'+n.body+'</p></div><a class="dl" href="#" onclick="return false">PDF</a></div>';}).join('');
+}
+addEventListener('hashchange',function(){var t=location.hash.slice(1);if(types.indexOf(t)>0){cur=t;paint();}});
+paint();
+})();
+</script>
+</body>
+</html>

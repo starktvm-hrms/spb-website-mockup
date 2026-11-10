@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Publications · Kerala State Planning Board</title>
+<meta name="description" content="Economic Reviews, plan documents, working group reports and evaluation studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="pbanner"><div class="wrap">
+    <h1>Publications</h1>
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Publications</div>
+  </div></section>
+  <section class="sec" style="padding-top:3rem"><div class="wrap">
+    <div class="filters"><select id="fk" aria-label="Category"></select><input id="fq" type="search" placeholder="Search publications" aria-label="Search publications"></div>
+    <div class="pubs" id="plist"></div>
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<script>
+(function(){
+var K=KP,fk=document.getElementById('fk'),fq=document.getElementById('fq'),pl=document.getElementById('plist');
+var kinds=['All'];K.PUBS.forEach(function(p){if(kinds.indexOf(p.k)<0)kinds.push(p.k)});
+kinds.forEach(function(k){fk.append(K.h('option',{value:k},k==='All'?'All categories':k))});
+var hk=decodeURIComponent(location.hash.slice(1));if(kinds.indexOf(hk)>0)fk.value=hk;
+function paint(){var q=fq.value.trim().toLowerCase();
+  var L=K.PUBS.filter(function(p){return(fk.value==='All'||p.k===fk.value)&&(!q||(p.t+' '+p.d).toLowerCase().indexOf(q)>-1)}).sort(function(a,b){return b.y-a.y});
+  pl.innerHTML=L.length?L.map(function(p){return '<a class="book" href="#" onclick="return false"><div class="cover '+p.c+'"><small>'+p.k+'</small><b>'+p.t+'</b><span>'+p.d+'</span></div><div class="bi"><b>'+p.y+'</b><span class="dl">PDF</span></div></a>'}).join(''):'<div class="empty" style="grid-column:1/-1"><h3>No publications found</h3><p>Try another category or search term.</p></div>';}
+fk.onchange=paint;fq.oninput=paint;addEventListener('hashchange',function(){var k=decodeURIComponent(location.hash.slice(1));if(kinds.indexOf(k)>0){fk.value=k;paint();}});paint();
+})();
+</script>
+</body>
+</html>

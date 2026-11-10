@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us · Kerala State Planning Board</title>
+<meta name="description" content="About the Kerala State Planning Board: functions, members, divisions and history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="pbanner"><div class="wrap">
+    <h1>About Us</h1>
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</div>
+  </div></section>
+  <div class="wrap inner">
+    <div class="prose">
+      <h2 id="board">About the Board</h2>
+      <p>The Kerala State Planning Board is the apex body for development planning in Kerala. Constituted in 1967, it functions under the Planning and Economic Affairs Department of the Government of Kerala, with its office at Pattom, Thiruvananthapuram.</p>
+      <p>Kerala is one of the few states that continued to prepare Five-Year Plans alongside Annual Plans after national planning changed in 2015. The Board prepares both, and links state priorities with the plans of more than a thousand local governments.</p>
+
+      <h2 id="functions">Functions</h2>
+      <ul>
+        <li>Formulate the Five-Year Plans and Annual Plans of the state.</li>
+        <li>Assess the state’s financial, material and human resources and recommend how to use them.</li>
+        <li>Monitor the implementation of plan schemes by departments.</li>
+        <li>Evaluate schemes and programmes, and recommend corrective measures.</li>
+        <li>Guide and support plan formulation by local governments.</li>
+        <li>Prepare the annual Economic Review placed before the Legislative Assembly.</li>
+        <li>Advise the government on development policy questions referred to the Board.</li>
+      </ul>
+
+      <h2 id="members">Board Members</h2>
+      <p>The Chief Minister is the Chairperson of the Board. The Board includes a Vice Chairperson, ministers nominated as members, expert members and a Member Secretary. It was last reconstituted in July 2026.</p>
+      <div class="tblw"><table class="tbl">
+        <thead><tr><th>Name</th><th>Designation</th></tr></thead>
+        <tbody>
+          <tr><td>V. D. Satheesan</td><td>Chairperson (Chief Minister of Kerala)</td></tr>
+          <tr><td>K. M. Chandrasekhar</td><td>Vice Chairperson</td></tr>
+          <tr><td>P. K. Kunhalikutty</td><td>Member (Minister)</td></tr>
+          <tr><td>Sunny Joseph</td><td>Member (Minister)</td></tr>
+          <tr><td>Mons Joseph</td><td>Member (Minister)</td></tr>
+          <tr><td>Shibu Baby John</td><td>Member (Minister)</td></tr>
+          <tr><td>C. P. John</td><td>Member (Minister)</td></tr>
+          <tr><td>To be notified</td><td>Expert Members</td></tr>
+          <tr><td>To be updated</td><td>Member Secretary</td></tr>
+        </tbody>
+      </table></div>
+      <div class="verify">Names are taken from news reports of the July 2026 reconstitution. Confirm against the government order before publishing.</div>
+
+      <h2 id="divisions">Divisions</h2>
+      <p>The Board’s technical work is carried out by eight divisions, each headed by a Chief.</p>
+      <div class="tblw"><table class="tbl" id="dtbl"><thead><tr><th>Division</th><th>Responsibilities</th></tr></thead><tbody></tbody></table></div>
+
+      <h2 id="history">History</h2>
+      <ul>
+        <li><b>1967</b> — State Planning Board constituted.</li>
+        <li><b>1996</b> — People’s Plan Campaign: a large share of plan funds devolved to local governments, planned through grama sabhas.</li>
+        <li><b>2022</b> — Fourteenth Five-Year Plan (2022-27) launched with 44 working groups.</li>
+        <li><b>2026</b> — Board reconstituted; preparation of the Fifteenth Five-Year Plan (2027-32) begins.</li>
+      </ul>
+    </div>
+    <aside>
+      <div class="panel"><h3>About Us</h3><ul class="snav"><li><a href="#board">About the Board</a></li><li><a href="#functions">Functions</a></li><li><a href="#members">Board Members</a></li><li><a href="#divisions">Divisions</a></li><li><a href="#history">History</a></li></ul></div>
+      <div class="panel"><h3>Office</h3><div class="pad"><p>Kerala State Planning Board<br>Pattom, Thiruvananthapuram<br>Kerala 695 004</p><p>Phone: 0471 254 0208</p></div></div>
+    </aside>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script>
+document.querySelector('#dtbl tbody').innerHTML=KP.DIVISIONS.map(function(d){return '<tr><td><b>'+d[1]+'</b></td><td>'+d[2]+'</td></tr>'}).join('');
+</script>
+</body>
+</html>

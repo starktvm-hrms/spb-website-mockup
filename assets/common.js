@@ -30,6 +30,24 @@ var ICON={
   people:svg('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.2c3 .2 5.5 2.3 5.5 5.8"/>'),
   topics:svg('<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>'),
   check:svg('<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/>'),
+  review:svg('<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/>'),
+  calendar:svg('<rect x="3" y="4" width="18" height="17"/><path d="M3 9h18M8 2v4M16 2v4"/>'),
+  annual:svg('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),
+  monitor:svg('<path d="M2 12h4l3-8 4 16 3-8h6"/>'),
+  search:svg('<circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/>'),
+  local:svg('<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 4.5M12 11.5l5.5 4.5"/>'),
+  group:svg('<circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M6.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M1.5 18c0-2 1.6-3.6 3.5-3.6M22.5 18c0-2-1.6-3.6-3.5-3.6"/>'),
+  notice:svg('<path d="M4 9v6h3l6 4V5L7 9z"/><path d="M17 9a4 4 0 010 6M19.5 6.5a8 8 0 010 11"/>'),
+  info:svg('<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>'),
+  doc:svg('<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>'),
+  coord:svg('<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2L19 19M5 19l2.8-2.8M16.2 7.8L19 5"/>'),
+  telescope:svg('<path d="M3 15l12-6 2 4-12 6z"/><path d="M15 9l4-2 2 4-4 2"/><path d="M9 17l-3 5M11 16l3 6"/>'),
+  factory:svg('<path d="M3 21V10l6 4V10l6 4V5h6v16z"/><path d="M7 18h2M12 18h2M17 18h2"/>'),
+  chip:svg('<rect x="6" y="6" width="12" height="12"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>'),
+  globe:svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'),
+  mail:svg('<rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/>'),
+  pin:svg('<path d="M12 21s-7-6.3-7-11.5a7 7 0 0114 0C19 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'),
+  phone:svg('<path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/>'),
   up:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3l6 8H2z" fill="currentColor"/></svg>',
   down:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13L2 5h12z" fill="currentColor"/></svg>'
 };
@@ -76,38 +94,42 @@ var staff=false;try{staff=localStorage.getItem('kp-staff')==='1'}catch(e){}
 
 /* ---------- chrome ---------- */
 var here=location.pathname.split('/').pop()||'index.html';
+var MENU=[
+  ['index.html','Home'],
+  ['about.html','About Us',[['about.html#board','About the Board'],['about.html#functions','Functions'],['about.html#members','Board Members'],['about.html#divisions','Divisions'],['about.html#history','History']]],
+  ['plans.html','Plans',[['plans.html#fyp14','14th Five-Year Plan (2022-27)'],['plans.html#fyp15','15th Five-Year Plan (2027-32)'],['plans.html#annual','Annual Plans'],['plans.html#decentralised','Decentralised Planning'],['plans.html#monitoring','Monitoring & Evaluation']]],
+  ['publications.html','Publications',[['publications.html#Economic Review','Economic Review'],['publications.html#Plan Document','Plan Documents'],['publications.html#Working Group Report','Working Group Reports'],['publications.html#Evaluation Study','Evaluation Studies']]],
+  ['notices.html','Notices',[['notices.html#News','News & Events'],['notices.html#Circular','Circulars & Orders'],['notices.html#Tender','Tenders'],['notices.html#Recruitment','Recruitment']]],
+  ['forum.html','Kerala Plan',[['forum.html#all','Citizen discussions'],['forum.html#new','Share your view']]],
+  ['contact.html','Contact']
+];
 function header(){
-  var dd=CATS.map(function(c){return '<li><a href="forum.html#'+c.id+'">'+ICON[c.id]+c.name+'</a></li>';}).join('');
-  var home=here==='index.html';
+  var items=MENU.map(function(m){
+    var cur=(here===m[0])?' aria-current="page"':'';
+    var dd=m[2]?'<ul class="dd">'+m[2].map(function(s){return '<li><a href="'+s[0]+'">'+s[1]+'</a></li>'}).join('')+'</ul>':'';
+    return '<li><a href="'+m[0]+'"'+cur+'>'+m[1]+'</a>'+dd+'</li>';
+  }).join('');
   return '<a class="skip" href="#main">Skip to content</a>'+
   '<div class="topbar"><div class="wrap">'+
-    '<div class="l"><span lang="ml">കേരള പ്ലാൻ</span><span>State Planning Board</span><span>Kerala, planned together</span></div>'+
-    '<div class="r" role="group" aria-label="Text size"><button type="button" data-fs="13px" aria-label="Smaller text">A-</button><button type="button" data-fs="15px" aria-label="Default text size">A</button><button type="button" data-fs="17px" aria-label="Larger text">A+</button></div>'+
+    '<div class="l"><span>Government of Kerala</span><span lang="ml">കേരള സർക്കാർ</span>'+
+      '<span><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>0471 254 0208</span></div>'+
+    '<div class="r" role="group" aria-label="Text size"><a href="contact.html#rti" style="margin-right:.6rem">RTI</a><a href="#main" style="margin-right:.8rem">Screen reader access</a>'+
+      '<button type="button" data-fs="13px" aria-label="Smaller text">A-</button><button type="button" data-fs="15px" aria-label="Default text size">A</button><button type="button" data-fs="17px" aria-label="Larger text">A+</button></div>'+
   '</div></div>'+
   '<header class="hdr"><div class="wrap">'+
-    '<a class="logo" href="index.html" aria-label="Kerala Plan home">'+LOGO+'<span><b>Kerala Plan</b><small><span lang="ml">കേരള പ്ലാൻ</span> · State Planning Board</small></span></a>'+
+    '<a class="logo" href="index.html" aria-label="State Planning Board home">'+LOGO+'<span><b>State Planning Board</b><small><span lang="ml">സംസ്ഥാന ആസൂത്രണ ബോർഡ്</span> · Government of Kerala</small></span></a>'+
     '<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
-    '<nav class="nav" id="nav" aria-label="Main"><ul>'+
-      '<li><a href="index.html"'+(home?' aria-current="page"':'')+'>Home</a></li>'+
-      '<li><a href="forum.html#all">Topics</a><ul class="dd">'+dd+'</ul></li>'+
-      '<li><a href="forum.html#all"'+(here==='forum.html'?' aria-current="page"':'')+'>All posts</a></li>'+
-      '<li><a href="index.html#updates">Updates</a></li>'+
-      '<li><a href="index.html#how">How it works</a></li>'+
-      '<li><a href="index.html#rules">House rules</a></li>'+
-    '</ul></nav>'+
-    '<a class="hbtn" href="forum.html#new">New post</a>'+
+    '<nav class="nav" id="nav" aria-label="Main"><ul>'+items+'</ul></nav>'+
   '</div></header>';
 }
 function footer(){
-  var t=CATS.slice(0,5).map(function(c){return '<li><a href="forum.html#'+c.id+'">'+c.name+'</a></li>'}).join('');
-  var t2=CATS.slice(5).map(function(c){return '<li><a href="forum.html#'+c.id+'">'+c.name+'</a></li>'}).join('');
   return '<footer class="ftr"><div class="wrap top">'+
-    '<div><a class="logo" href="index.html">'+LOGO+'<span><b>Kerala Plan</b><small>State Planning Board</small></span></a>'+
-      '<p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p></div>'+
-    '<div><h4>Topics</h4><ul>'+t+'</ul></div>'+
-    '<div><h4>More topics</h4><ul>'+t2+'</ul></div>'+
-    '<div><h4>Take part</h4><ul><li><a href="forum.html#new">Share your view</a></li><li><a href="forum.html#all">Read all posts</a></li><li><a href="index.html#updates">Important updates</a></li><li><a href="index.html#how">How Kerala Plan works</a></li><li><a href="index.html#rules">House rules</a></li></ul></div>'+
-  '</div><div class="bot"><div class="wrap"><span>© '+new Date().getFullYear()+' State Planning Board · Kerala Plan</span><span lang="ml">കേരള പ്ലാൻ</span></div></div></footer>'+
+    '<div><a class="logo" href="index.html">'+LOGO+'<span><b>State Planning Board</b><small>Government of Kerala</small></span></a>'+
+      '<p>Kerala State Planning Board, Pattom, Thiruvananthapuram, Kerala 695 004<br>Phone: 0471 254 0208</p></div>'+
+    '<div><h4>The Board</h4><ul><li><a href="about.html#board">About the Board</a></li><li><a href="about.html#members">Board Members</a></li><li><a href="about.html#divisions">Divisions</a></li><li><a href="about.html#history">History</a></li><li><a href="contact.html">Contact</a></li></ul></div>'+
+    '<div><h4>Plans &amp; Reports</h4><ul><li><a href="plans.html#fyp14">Five-Year Plans</a></li><li><a href="plans.html#annual">Annual Plans</a></li><li><a href="publications.html#Economic Review">Economic Review</a></li><li><a href="publications.html#Working Group Report">Working Group Reports</a></li><li><a href="publications.html#Evaluation Study">Evaluation Studies</a></li></ul></div>'+
+    '<div><h4>Citizens</h4><ul><li><a href="forum.html#all">Kerala Plan</a></li><li><a href="notices.html">Notices &amp; Tenders</a></li><li><a href="notices.html#Recruitment">Recruitment</a></li><li><a href="contact.html#rti">Right to Information</a></li><li><a href="index.html#links">Important Links</a></li></ul></div>'+
+  '</div><div class="bot"><div class="wrap"><span>© '+new Date().getFullYear()+' Kerala State Planning Board, Government of Kerala. All rights reserved.</span><span>Website policy · Accessibility · Disclaimer</span></div></div></footer>'+
   '<button class="totop" type="button" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>';
 }
 try{var fs=localStorage.getItem('kp-fs');if(fs)document.documentElement.style.setProperty('--fs',fs);}catch(e){}
@@ -123,7 +145,55 @@ document.addEventListener('DOMContentLoaded',function(){
   addEventListener('scroll',function(){tp.hidden=scrollY<600},{passive:true});
 });
 
-window.KP={CATS:CATS,CAT:CAT,ICON:ICON,LOGO:LOGO,DB:DB,h:h,ico:ico,ago:ago,toast:toast,weekAsk:weekAsk,
+/* ---------- Board content ----------
+   Sources: Wikipedia, the LSGD portal and news reports (2026). Verify against the
+   Board's own records before publishing. Download links are placeholders. */
+var NOTICES=[
+  {type:'News',date:'2026-10-07',title:'Board to empanel consultants and think tanks for the 15th Five-Year Plan (2027-32)',body:'The State Planning Board has decided to empanel consulting firms and think tanks to support preparation of the Fifteenth Five-Year Plan.'},
+  {type:'News',date:'2026-07-21',title:'State Planning Board reconstituted',body:'The Government of Kerala reconstituted the State Planning Board with the Chief Minister as Chairperson and K. M. Chandrasekhar as Vice Chairperson. Expert members will be notified separately.'},
+  {type:'News',date:'2026-01-28',title:'Economic Review 2025 placed before the Legislative Assembly',body:'Kerala’s GSDP grew 6.19 per cent in real terms in 2024-25. The Review was released ahead of the State Budget.'},
+  {type:'News',date:'2026-11-03',title:'Kerala Plan: citizens invited to share priorities for the 15th Plan',body:'Share concerns, ideas and opinions on nine topics, from water and sanitation to governance and services.'},
+  {type:'Circular',date:'2026-09-15',title:'Guidelines for formulation of Annual Plan 2027-28 by local governments',body:'Circular to panchayats, municipalities and corporations on timelines and procedure.'},
+  {type:'Circular',date:'2026-08-02',title:'Formation of working groups for the 15th Five-Year Plan',body:'Order constituting sectoral working groups.'},
+  {type:'Tender',date:'2026-10-20',title:'Expression of Interest: empanelment of consulting firms and think tanks',body:'EOI for technical support to the 15th Five-Year Plan.'},
+  {type:'Tender',date:'2026-09-28',title:'Quotation: printing of Economic Review 2026',body:'Sealed quotations invited from approved printers.'},
+  {type:'Recruitment',date:'2026-09-10',title:'Young Professionals programme: applications invited',body:'Short-term engagement with the Board’s divisions.'},
+  {type:'Recruitment',date:'2026-06-18',title:'Chief (Industry and Infrastructure Division): selection through Kerala PSC',body:'See the Kerala Public Service Commission notification.'}
+];
+var PUBS=[
+  {k:'Economic Review',t:'Economic Review 2025',y:2026,d:'Volumes I & II, English and Malayalam',c:''},
+  {k:'Economic Review',t:'Economic Review 2024',y:2025,d:'Volumes I & II, English and Malayalam',c:''},
+  {k:'Economic Review',t:'Economic Review 2023',y:2024,d:'Volumes I & II, English and Malayalam',c:''},
+  {k:'Economic Review',t:'Economic Review 2022',y:2023,d:'First year of the 14th Five-Year Plan',c:''},
+  {k:'Plan Document',t:'Fourteenth Five-Year Plan 2022-27',y:2022,d:'Approach and plan document',c:'v2'},
+  {k:'Plan Document',t:'Annual Plan 2026-27',y:2026,d:'Final year of the 14th Plan',c:'v2'},
+  {k:'Plan Document',t:'Annual Plan 2025-26',y:2025,d:'Scheme-wise outlays',c:'v2'},
+  {k:'Working Group Report',t:'14th Plan Working Group Reports',y:2022,d:'Reports of the 44 working groups',c:'v3'},
+  {k:'Working Group Report',t:'Working Group on Art and Culture',y:2022,d:'Report, March 2022',c:'v3'},
+  {k:'Evaluation Study',t:'Evaluation Studies',y:2025,d:'Field evaluations of state schemes',c:'v4'}
+];
+var DIVISIONS=[
+  ['coord','Plan Co-ordination','Prepares Five-Year and Annual Plans, resource estimates and the Economic Review.'],
+  ['food','Agriculture','Agriculture and allied sectors, irrigation, fisheries and rural development.'],
+  ['people','Social Services','Education, health, housing, social security and welfare of disadvantaged groups.'],
+  ['factory','Industry & Infrastructure','Industry, power, transport, roads and urban infrastructure.'],
+  ['search','Evaluation','Independent evaluation studies of plan schemes and programmes.'],
+  ['local','Decentralised Planning','Supports plan formulation by local governments and District Planning Committees.'],
+  ['telescope','Perspective Planning','Long-term development studies and macro-economic analysis.'],
+  ['chip','Information Technology','Plan monitoring systems, data and the Board’s digital services.']
+];
+var LINKS=[
+  ['globe','Government of Kerala','https://kerala.gov.in'],
+  ['governance','Kerala Legislative Assembly','https://niyamasabha.nic.in'],
+  ['local','Local Self Government Department','https://lsgkerala.gov.in'],
+  ['annual','Finance Department','https://finance.kerala.gov.in'],
+  ['review','Economics & Statistics Department','https://ecostat.kerala.gov.in'],
+  ['coord','NITI Aayog','https://niti.gov.in']
+];
+window.KP={NOTICES:NOTICES,PUBS:PUBS,DIVISIONS:DIVISIONS,LINKS:LINKS,
+  fdate:function(s){return new Date(s+'T00:00:00').toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});},
+  isNew:function(s){return (Date.now()-new Date(s+'T00:00:00'))<30*864e5;},
+CATS:CATS,CAT:CAT,ICON:ICON,LOGO:LOGO,DB:DB,h:h,ico:ico,ago:ago,toast:toast,weekAsk:weekAsk,
   isStaff:function(){return staff},setStaff:function(v){staff=v;try{localStorage.setItem('kp-staff',v?'1':'')}catch(e){}},
   UID:'me',
   KINDS:['Notice','Consultation','Deadline','Result'],
