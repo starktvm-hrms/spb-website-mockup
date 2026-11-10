@@ -1,22 +1,21 @@
 # Kerala Plan · State Planning Board — website mockup
 
-A government-portal style website for the State Planning Board's **Kerala Plan** citizen-participation
-platform. All text comes from the Kerala Plan reference page (`Kerala_Plan_3.html`).
+A public forum where citizens take part in the Kerala State Planning Board's work, like a Facebook group:
+people post suggestions and concerns, and others like, comment on and share them. The Board replies with
+Official answers and posts updates. Built on a government-portal design (navy and gold).
 
 ## Pages
 
 | File | Content |
 | --- | --- |
-| `index.html` | Home: latest-notice ticker, hero, quick-access tiles, about the Board and leadership, key figures, news & notices (tabs), Five-Year/Annual Plans, divisions, publications, Kerala Plan, important links |
-| `about.html` | About the Board, functions, Board members, divisions, history |
-| `plans.html` | 14th and 15th Five-Year Plans, Annual Plans, decentralised planning, monitoring & evaluation |
-| `publications.html` | Economic Reviews, plan documents, working group reports, evaluation studies (filter + search) |
-| `notices.html` | News & events, circulars & orders, tenders, recruitment |
-| `contact.html` | Address, phone, enquiry form, Right to Information |
-| `forum.html` | Kerala Plan citizen discussions (from the Kerala Plan page) |
+| `index.html` | **The forum.** Group cover and header, Discussion / Board updates / About tabs, topics, composer, feed with Like · Comment · Share, threaded comments, Official Board replies, question of the week |
+| `about.html`, `plans.html`, `publications.html`, `notices.html`, `contact.html` | State Planning Board information pages, linked from the footer |
+| `forum.html` | Redirects to `index.html` (old links) |
 
-Shared header, footer and content (notices, publications, divisions, links) are in `assets/common.js`;
-styles in `assets/gov.css`.
+Links inside the forum: `#all`, `#topic/water`, `#post/<id>` (shareable post link), `#updates`, `#about`, `#new`.
+
+Shared header, footer, data store and content are in `assets/common.js`; styles in `assets/gov.css` and
+`assets/forum.css`.
 
 ## Running
 
@@ -35,4 +34,6 @@ sources (Wikipedia, the LSGD portal, news reports from 2026). Check these agains
 - Phone number 0471 254 0208 (from a third-party directory); email address; RTI officers
 - Plan sizes (₹37,242 crore in 2022-23; ₹35,750 crore estimated for 2026-27)
 - Notices, circulars, tenders and recruitment items are illustrative; PDF links are placeholders
-- Kerala Plan discussions are saved in the visitor's browser (`localStorage`); connect a real backend to go live
+- The forum saves posts, comments, likes and shares in the visitor's browser (`localStorage`) and starts with
+  sample posts (`seedData` in `assets/common.js`). Connect a real backend and sign-in before launch.
+- Tick **Preview as Board staff** to post Official replies and publish Board updates.

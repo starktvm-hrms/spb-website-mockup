@@ -48,25 +48,55 @@ var ICON={
   mail:svg('<rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/>'),
   pin:svg('<path d="M12 21s-7-6.3-7-11.5a7 7 0 0114 0C19 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'),
   phone:svg('<path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/>'),
+  like:svg('<path d="M7 10v11H3V10z"/><path d="M7 10l4-7c1.7 0 2.8 1.3 2.5 3L13 9h6a2 2 0 012 2.3l-1.4 8A2 2 0 0117.6 21H7"/>'),
+  share:svg('<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/>'),
+  link:svg('<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7L12 6.3"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>'),
+  more:svg('<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'),
   up:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3l6 8H2z" fill="currentColor"/></svg>',
   down:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13L2 5h12z" fill="currentColor"/></svg>'
 };
 var LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#0b2545"/><circle cx="22.5" cy="9.5" r="3.6" fill="#e5a823"/><path d="M4 21c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M4 26c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/></svg>';
 
+/* Sample discussion so the demo feed is not empty. Delete SEED to launch with an empty forum. */
+function seedData(){
+  var H=36e5,now=Date.now();
+  var P=[
+    ['p1','water','Concern','Anitha R.','Palakkad','Pipe water comes only twice a week in our ward in summer','From March to May, the tap connection in ward 7 gets water only on Tuesdays and Fridays. Families depend on tanker lorries. Can the plan include a new overhead tank for the ward?',5],
+    ['p2','environment','Idea','Rahul M.','Ernakulam','Map every culvert before the monsoon so blocked drains are cleared in time','Most flooding in our town starts at a handful of blocked culverts. If each ward sabha mapped them and volunteers reported blockages, the municipality could clear them before June.',26],
+    ['p3','education','Question','Fathima K.','Kannur','Will government colleges get more seats in new-age courses?','Many students in our district travel outside Kerala for data science and AI courses. Are there plans to add these programmes in government and aided colleges here?',50],
+    ['p4','food','Idea','Joseph T.','Thrissur','Weekly farmers’ market at every panchayat office','A covered space once a week where local farmers can sell vegetables directly would cut middlemen and give us fresher food.',80],
+    ['p5','roads','Concern','Suresh P.','Idukki','No bus after 8 pm on the hill route','Workers returning from town have no bus after 8 pm. Autos charge ₹400. Even one late service would help hundreds of people.',120],
+    ['p6','health','Opinion','Lakshmi N.','Kollam','Our family health centre is excellent: fund more staff, not more buildings','The FHC near us has a great doctor but only one. Queues are long by 9 am. Staff matter more than new buildings.',150]
+  ];
+  var d={posts:P.map(function(x){return{id:x[0],cat:x[1],flair:x[2],name:x[3],author:'s_'+x[0],district:x[4],title:x[5],body:x[6],ts:now-x[7]*H}}),
+    comments:[
+      {id:'c1',post:'p1',parent:null,body:'Same in ward 9. The problem is the pump house capacity, not the pipes.',name:'Joseph T.',author:'s_c1',ts:now-4*H,board:false},
+      {id:'c2',post:'p1',parent:'c1',body:'Thank you both. We have shared this with the District Planning Committee and the working group on water for the Annual Plan.',name:'State Planning Board',author:'board',ts:now-2*H,board:true},
+      {id:'c3',post:'p2',parent:null,body:'Our residents’ association already does this informally. Happy to share our map.',name:'Lakshmi N.',author:'s_c3',ts:now-20*H,board:false},
+      {id:'c4',post:'p3',parent:null,body:'Yes please. Even short certificate courses would help.',name:'Anitha R.',author:'s_c4',ts:now-40*H,board:false}
+    ],likes:[],shares:[],
+    updates:[{id:'u1',kind:'Consultation',cat:'',title:'Share your priorities for the 15th Five-Year Plan',body:'The Board is preparing the Fifteenth Five-Year Plan (2027-32). Post your concerns and ideas under any topic; recurring themes will go to the working groups.',pinned:true,ts:now-30*H,author:'board'}]};
+  var L={p1:14,p2:23,p3:9,p4:17,p5:6,p6:11,c1:4,c2:8,c3:3,c4:1},S={p1:3,p2:5,p4:2};
+  Object.keys(L).forEach(function(t){for(var i=0;i<L[t];i++)d.likes.push({id:t+'__x'+i,t:t,u:'x'+i})});
+  Object.keys(S).forEach(function(t){for(var i=0;i<S[t];i++)d.shares.push({id:t+'__s'+i,t:t,u:'x'+i,via:'link'})});
+  return d;
+}
 /* ---------- local demo store ----------
    The Kerala Plan page used a shared database provided by its host. This static
    build keeps the same API (collection/add/doc.set/doc.delete/onSnapshot) but
    stores data in the visitor's browser. Swap it for a real backend to go live. */
 var DB=(function(){
-  var KEY='kerala-plan-v2',subs={},data={};
-  try{data=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
-  ['posts','comments','votes','updates'].forEach(function(k){data[k]=data[k]||[]});
+  var KEY='kerala-plan-v3',subs={},data=null;
+  try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+  if(!data)data=seedData();
+  ['posts','comments','likes','shares','updates'].forEach(function(k){data[k]=data[k]||[]});
   function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
   function snap(n){return{docs:data[n].map(function(o){return{id:o.id,data:function(){return Object.assign({},o)}}})}}
   function emit(n){save();(subs[n]||[]).forEach(function(f){f(snap(n))});}
   function uid(){return Math.random().toString(36).slice(2,10)+Date.now().toString(36)}
   window.addEventListener('storage',function(e){if(e.key!==KEY)return;try{data=JSON.parse(e.newValue)||data}catch(x){}Object.keys(subs).forEach(function(n){(subs[n]||[]).forEach(function(f){f(snap(n))})});});
-  return{collection:function(n){return{
+  return{reset:function(){data=seedData();save();Object.keys(subs).forEach(function(n){(subs[n]||[]).forEach(function(f){f(snap(n))})});},
+  collection:function(n){return{
     add:async function(o){data[n].push(Object.assign({},o,{id:uid()}));emit(n);},
     doc:function(id){return{
       set:async function(o){data[n]=data[n].filter(function(x){return x.id!==id});data[n].push(Object.assign({},o,{id:id}));emit(n);},
@@ -95,19 +125,15 @@ var staff=false;try{staff=localStorage.getItem('kp-staff')==='1'}catch(e){}
 /* ---------- chrome ---------- */
 var here=location.pathname.split('/').pop()||'index.html';
 var MENU=[
-  ['index.html','Home'],
-  ['about.html','About Us',[['about.html#board','About the Board'],['about.html#functions','Functions'],['about.html#members','Board Members'],['about.html#divisions','Divisions'],['about.html#history','History']]],
-  ['plans.html','Plans',[['plans.html#fyp14','14th Five-Year Plan (2022-27)'],['plans.html#fyp15','15th Five-Year Plan (2027-32)'],['plans.html#annual','Annual Plans'],['plans.html#decentralised','Decentralised Planning'],['plans.html#monitoring','Monitoring & Evaluation']]],
-  ['publications.html','Publications',[['publications.html#Economic Review','Economic Review'],['publications.html#Plan Document','Plan Documents'],['publications.html#Working Group Report','Working Group Reports'],['publications.html#Evaluation Study','Evaluation Studies']]],
-  ['notices.html','Notices',[['notices.html#News','News & Events'],['notices.html#Circular','Circulars & Orders'],['notices.html#Tender','Tenders'],['notices.html#Recruitment','Recruitment']]],
-  ['forum.html','Kerala Plan',[['forum.html#all','Citizen discussions'],['forum.html#new','Share your view']]],
-  ['contact.html','Contact']
+  ['index.html#all','Discussion'],
+  ['index.html#all','Topics',CATS.map(function(c){return['index.html#topic/'+c.id,c.name,c.id]})],
+  ['index.html#updates','Board Updates'],
+  ['index.html#about','About the Group',[['index.html#about','About Kerala Plan'],['index.html#about-how','How it works'],['index.html#about-rules','House rules']]]
 ];
 function header(){
   var items=MENU.map(function(m){
-    var cur=(here===m[0])?' aria-current="page"':'';
-    var dd=m[2]?'<ul class="dd">'+m[2].map(function(s){return '<li><a href="'+s[0]+'">'+s[1]+'</a></li>'}).join('')+'</ul>':'';
-    return '<li><a href="'+m[0]+'"'+cur+'>'+m[1]+'</a>'+dd+'</li>';
+    var dd=m[2]?'<ul class="dd">'+m[2].map(function(s){return '<li><a href="'+s[0]+'">'+(s[2]?ICON[s[2]]:'')+s[1]+'</a></li>'}).join('')+'</ul>':'';
+    return '<li><a href="'+m[0]+'" data-nav="'+m[0].split('#')[1]+'">'+m[1]+'</a>'+dd+'</li>';
   }).join('');
   return '<a class="skip" href="#main">Skip to content</a>'+
   '<div class="topbar"><div class="wrap">'+
@@ -117,19 +143,22 @@ function header(){
       '<button type="button" data-fs="13px" aria-label="Smaller text">A-</button><button type="button" data-fs="15px" aria-label="Default text size">A</button><button type="button" data-fs="17px" aria-label="Larger text">A+</button></div>'+
   '</div></div>'+
   '<header class="hdr"><div class="wrap">'+
-    '<a class="logo" href="index.html" aria-label="State Planning Board home">'+LOGO+'<span><b>State Planning Board</b><small><span lang="ml">സംസ്ഥാന ആസൂത്രണ ബോർഡ്</span> · Government of Kerala</small></span></a>'+
+    '<a class="logo" href="index.html" aria-label="Kerala Plan home">'+LOGO+'<span><b>Kerala Plan</b><small><span lang="ml">കേരള പ്ലാൻ</span> · State Planning Board</small></span></a>'+
     '<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
     '<nav class="nav" id="nav" aria-label="Main"><ul>'+items+'</ul></nav>'+
+    '<a class="hbtn" href="index.html#new">+ New post</a>'+
   '</div></header>';
 }
 function footer(){
+  var t=CATS.map(function(c){return '<li><a href="index.html#topic/'+c.id+'">'+c.name+'</a></li>'}).join('');
   return '<footer class="ftr"><div class="wrap top">'+
-    '<div><a class="logo" href="index.html">'+LOGO+'<span><b>State Planning Board</b><small>Government of Kerala</small></span></a>'+
-      '<p>Kerala State Planning Board, Pattom, Thiruvananthapuram, Kerala 695 004<br>Phone: 0471 254 0208</p></div>'+
-    '<div><h4>The Board</h4><ul><li><a href="about.html#board">About the Board</a></li><li><a href="about.html#members">Board Members</a></li><li><a href="about.html#divisions">Divisions</a></li><li><a href="about.html#history">History</a></li><li><a href="contact.html">Contact</a></li></ul></div>'+
-    '<div><h4>Plans &amp; Reports</h4><ul><li><a href="plans.html#fyp14">Five-Year Plans</a></li><li><a href="plans.html#annual">Annual Plans</a></li><li><a href="publications.html#Economic Review">Economic Review</a></li><li><a href="publications.html#Working Group Report">Working Group Reports</a></li><li><a href="publications.html#Evaluation Study">Evaluation Studies</a></li></ul></div>'+
-    '<div><h4>Citizens</h4><ul><li><a href="forum.html#all">Kerala Plan</a></li><li><a href="notices.html">Notices &amp; Tenders</a></li><li><a href="notices.html#Recruitment">Recruitment</a></li><li><a href="contact.html#rti">Right to Information</a></li><li><a href="index.html#links">Important Links</a></li></ul></div>'+
-  '</div><div class="bot"><div class="wrap"><span>© '+new Date().getFullYear()+' Kerala State Planning Board, Government of Kerala. All rights reserved.</span><span>Website policy · Accessibility · Disclaimer</span></div></div></footer>'+
+    '<div><a class="logo" href="index.html">'+LOGO+'<span><b>Kerala Plan</b><small>State Planning Board · Government of Kerala</small></span></a>'+
+      '<p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p>'+
+      '<p style="font-size:.85rem">Kerala State Planning Board, Pattom, Thiruvananthapuram, Kerala 695 004 · 0471 254 0208</p></div>'+
+    '<div><h4>Kerala Plan</h4><ul><li><a href="index.html#all">Discussion</a></li><li><a href="index.html#new">Share your view</a></li><li><a href="index.html#updates">Board updates</a></li><li><a href="index.html#about-how">How it works</a></li><li><a href="index.html#about-rules">House rules</a></li></ul></div>'+
+    '<div><h4>Topics</h4><ul class="cols2">'+t+'</ul></div>'+
+    '<div><h4>State Planning Board</h4><ul><li><a href="about.html">About the Board</a></li><li><a href="plans.html">Plans</a></li><li><a href="publications.html">Publications</a></li><li><a href="notices.html">Notices &amp; Tenders</a></li><li><a href="contact.html">Contact &amp; RTI</a></li></ul></div>'+
+  '</div><div class="bot"><div class="wrap"><span>© '+new Date().getFullYear()+' Kerala State Planning Board, Government of Kerala</span><span><a href="about.html">About the Board</a> · <a href="contact.html#rti">RTI</a> · <a href="contact.html">Contact</a></span></div></div></footer>'+
   '<button class="totop" type="button" aria-label="Back to top" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>';
 }
 try{var fs=localStorage.getItem('kp-fs');if(fs)document.documentElement.style.setProperty('--fs',fs);}catch(e){}
@@ -201,11 +230,14 @@ CATS:CATS,CAT:CAT,ICON:ICON,LOGO:LOGO,DB:DB,h:h,ico:ico,ago:ago,toast:toast,week
   FLAIRS:['Concern','Idea','Opinion','Question'],
   /* score, my vote and comment count per id */
   derive:function(S){
-    S.score={};S.mine={};S.ccount={};
-    S.votes.forEach(function(v){S.score[v.t]=(S.score[v.t]||0)+v.v;if(v.u===KP.UID)S.mine[v.t]=v.v;});
+    S.likes_n={};S.liked={};S.ccount={};S.shares_n={};
+    S.likes.forEach(function(v){S.likes_n[v.t]=(S.likes_n[v.t]||0)+1;if(v.u===KP.UID)S.liked[v.t]=1;});
+    S.shares.forEach(function(v){S.shares_n[v.t]=(S.shares_n[v.t]||0)+1;});
     S.comments.forEach(function(c){S.ccount[c.post]=(S.ccount[c.post]||0)+1;});
   },
-  hot:function(S,p){return((S.score[p.id]||0)+1+0.5*(S.ccount[p.id]||0))/Math.pow((Date.now()-p.ts)/36e5+2,1.4);},
+  hot:function(S,p){return((S.likes_n[p.id]||0)+1+0.5*(S.ccount[p.id]||0)+(S.shares_n[p.id]||0))/Math.pow((Date.now()-p.ts)/36e5+2,1.4);},
+  getName:function(){try{return localStorage.getItem('kp-name')||''}catch(e){return''}},
+  setName:function(n){try{localStorage.setItem('kp-name',n)}catch(e){}},
   docs:function(s){return s.docs.map(function(d){var o=Object.assign({},d.data());o.id=d.id;return o;});}
 };
 })();

@@ -3,223 +3,417 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kerala State Planning Board</title>
-<meta name="description" content="Kerala State Planning Board, Government of Kerala: Five-Year and Annual Plans, Economic Review, decentralised planning, publications and notices.">
+<title>Kerala Plan · State Planning Board</title>
+<meta name="description" content="Kerala Plan: a public forum where citizens share concerns, ideas and opinions with the Kerala State Planning Board.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/gov.css">
+<link rel="stylesheet" href="assets/forum.css">
 <script src="assets/common.js"></script>
 </head>
 <body>
 <div id="site-header"></div>
 
 <main id="main">
-  <div class="ticker" aria-label="Latest notices"><div class="wrap"><span class="lb">Latest</span><div class="tr"><div class="tt" id="ticker"></div></div></div></div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <svg class="bg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <!-- Group cover -->
+  <div class="gcover" aria-hidden="true">
+    <svg viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d4278"/><stop offset=".55" stop-color="#d98c3a"/><stop offset="1" stop-color="#f2c26b"/></linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d4278"/><stop offset=".6" stop-color="#d98c3a"/><stop offset="1" stop-color="#f2c26b"/></linearGradient>
         <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6a650"/><stop offset="1" stop-color="#0b2545"/></linearGradient>
       </defs>
-      <rect width="1600" height="700" fill="url(#sky)"/>
-      <circle cx="1180" cy="380" r="70" fill="#fbe3a6" opacity=".9"/>
-      <path d="M600 430 Q760 330 900 400 T1200 380 T1600 360 V470 H600Z" fill="#3c5a5a" opacity=".55"/>
-      <path d="M700 460 Q860 400 1020 440 T1360 420 T1600 430 V480 H700Z" fill="#1f3b3b" opacity=".8"/>
-      <rect y="470" width="1600" height="230" fill="url(#lake)"/>
-      <g stroke="#fbe3a6" stroke-width="3" opacity=".45" stroke-linecap="round"><path d="M1100 500h160M1130 525h110M1080 555h200M1150 590h80"/></g>
-      <g transform="translate(860 470)">
-        <path d="M0 18 Q110 40 230 18 L215 30 Q110 48 15 30Z" fill="#0b2545"/>
-        <path d="M30 18 Q60 -22 115 -24 Q170 -22 200 18Z" fill="#2a1d0f"/>
-        <path d="M45 18 Q70 -10 115 -12 Q160 -10 185 18" fill="none" stroke="#e5a823" stroke-width="2" opacity=".7"/>
-      </g>
+      <rect width="1600" height="400" fill="url(#sky)"/>
+      <circle cx="1020" cy="235" r="55" fill="#fbe3a6" opacity=".9"/>
+      <path d="M0 270 Q200 190 420 245 T860 230 T1250 225 T1600 215 V300 H0Z" fill="#3c5a5a" opacity=".55"/>
+      <path d="M0 290 Q260 245 520 275 T1060 265 T1600 268 V310 H0Z" fill="#1f3b3b" opacity=".85"/>
+      <rect y="300" width="1600" height="100" fill="url(#lake)"/>
+      <g stroke="#fbe3a6" stroke-width="3" opacity=".45" stroke-linecap="round"><path d="M950 322h150M975 345h100M930 370h190"/></g>
+      <g transform="translate(560 300)"><path d="M0 14 Q100 32 210 14 L196 24 Q100 38 14 24Z" fill="#0b2545"/><path d="M28 14 Q55 -18 105 -20 Q155 -18 182 14Z" fill="#2a1d0f"/></g>
       <g fill="#0b1f2e">
-        <path d="M1380 480 C1372 400 1384 330 1408 260 L1414 262 C1394 330 1384 400 1390 480Z"/>
-        <path d="M1410 262 C1360 240 1320 250 1290 280 C1330 262 1370 262 1410 268Z"/>
-        <path d="M1410 262 C1450 230 1500 232 1530 255 C1490 248 1450 254 1412 270Z"/>
-        <path d="M1410 262 C1400 220 1370 200 1340 196 C1370 214 1392 236 1404 268Z"/>
-        <path d="M1410 262 C1430 220 1462 204 1494 204 C1460 222 1436 242 1416 270Z"/>
-        <path d="M1410 262 C1380 270 1356 300 1350 330 C1370 300 1390 284 1414 270Z"/>
-        <path d="M1510 490 C1506 430 1516 380 1534 330 L1540 332 C1524 380 1516 430 1520 490Z"/>
-        <path d="M1536 332 C1500 314 1470 322 1448 344 C1478 332 1506 332 1536 338Z"/>
-        <path d="M1536 332 C1566 308 1600 310 1620 326 C1592 322 1564 326 1538 340Z"/>
-        <path d="M1536 332 C1530 300 1508 284 1486 282 C1508 296 1524 312 1532 338Z"/>
-        <path d="M1250 480 C1246 440 1252 405 1266 370 L1271 372 C1258 405 1253 440 1256 480Z"/>
-        <path d="M1268 372 C1240 360 1218 366 1202 384 C1224 374 1246 374 1268 378Z"/>
-        <path d="M1268 372 C1290 354 1316 356 1332 368 C1310 366 1290 368 1270 380Z"/>
-        <path d="M1200 478 Q1400 462 1600 470 V492 Q1400 486 1200 494Z"/>
+        <path d="M1300 310 C1293 250 1303 195 1324 140 L1330 142 C1312 195 1304 250 1310 310Z"/>
+        <path d="M1326 142 C1282 122 1246 130 1220 156 C1256 140 1290 140 1326 148Z"/>
+        <path d="M1326 142 C1362 114 1406 116 1432 136 C1398 130 1362 136 1328 150Z"/>
+        <path d="M1326 142 C1318 106 1290 88 1262 85 C1290 100 1310 120 1320 148Z"/>
+        <path d="M1326 142 C1344 106 1372 92 1400 92 C1370 108 1350 126 1332 150Z"/>
+        <path d="M1440 316 C1436 268 1444 228 1460 188 L1466 190 C1452 228 1446 268 1450 316Z"/>
+        <path d="M1462 190 C1430 175 1404 182 1384 202 C1410 190 1436 190 1462 196Z"/>
+        <path d="M1462 190 C1490 168 1522 170 1540 184 C1514 182 1488 186 1464 198Z"/>
+        <path d="M200 312 C196 270 202 236 216 200 L221 202 C208 236 203 270 206 312Z"/>
+        <path d="M218 202 C190 190 168 196 152 214 C174 204 196 204 218 208Z"/>
+        <path d="M218 202 C240 184 266 186 282 198 C260 196 240 198 220 210Z"/>
+        <path d="M0 306 Q300 296 600 304 T1200 300 T1600 304 V318 H0Z"/>
       </g>
     </svg>
+  </div>
+  <div class="ghead">
     <div class="wrap">
-      <span class="kick">Government of Kerala</span>
-      <h1>State Planning Board</h1>
-      <p class="ml" lang="ml">സംസ്ഥാന ആസൂത്രണ ബോർഡ്</p>
-      <p class="lead">Formulating Kerala’s Five-Year and Annual Plans, reviewing the state’s economy and guiding planning by local governments since 1967.</p>
-      <div class="btns">
-        <a class="btn gold" href="publications.html#Economic Review">Economic Review 2025</a>
-        <a class="btn line" href="plans.html#fyp14">14th Five-Year Plan</a>
+      <div class="gav" id="gav"></div>
+      <div>
+        <h1>Kerala Plan</h1>
+        <div class="gml" lang="ml">കേരള പ്ലാൻ · Kerala, planned together</div>
+        <div class="gmeta" id="gmeta"></div>
+      </div>
+      <div class="gact">
+        <a class="btn gold" href="#new">+ Share your view</a>
+        <button class="btn out" type="button" id="sharegroup">Share group</button>
       </div>
     </div>
-  </section>
-
-  <!-- Quick access -->
-  <div class="wrap quick">
-    <div class="box">
-      <div class="lbl"><small>Quick access</small><b>Services &amp; Information</b></div>
-      <div class="tiles" id="tiles"></div>
-    </div>
+    <div class="wrap"><nav class="gtabs" id="gtabs" aria-label="Group sections">
+      <a href="#all" data-v="feed">Discussion</a><a href="#updates" data-v="updates">Board updates</a><a href="#about" data-v="about">About</a>
+    </nav></div>
   </div>
 
-  <!-- About + leadership -->
-  <section class="sec">
-    <div class="wrap about">
-      <div>
-        <div class="title"><small>About the Board</small><h2>Planning for Kerala’s development</h2></div>
-        <p><b style="color:var(--navy)">The Kerala State Planning Board is the state’s apex body for development planning, constituted in 1967 under the Planning and Economic Affairs Department.</b></p>
-        <p>The Board formulates the Five-Year and Annual Plans, assesses the state’s resources, monitors plan implementation and evaluates schemes. Every year it prepares the Economic Review, placed before the Legislative Assembly with the State Budget.</p>
-        <p>Since the People’s Plan Campaign of 1996, the Board has also guided panchayats and municipalities as they prepare their own development plans with residents.</p>
-        <div class="btns" style="margin-top:1.4rem"><a class="btn" href="about.html">Read more</a><a class="btn out" href="about.html#functions">Functions</a></div>
+  <div class="wrap fg">
+    <!-- left -->
+    <aside class="lcol">
+      <div class="panel tp"><h3>Topics</h3><ul class="tlist" id="tnav"></ul></div>
+      <div class="panel"><h3>Demo controls</h3><div class="pad">
+        <p>This mockup saves posts in your browser only.</p>
+        <label class="chk"><input type="checkbox" id="staff"> Preview as Board staff</label>
+        <button class="btn sm out" type="button" id="reset" style="margin-top:.8rem">Reset sample posts</button>
+      </div></div>
+    </aside>
+
+    <!-- center -->
+    <section id="center" style="min-width:0">
+      <div id="v-feed">
+        <div id="thead"></div>
+        <div class="card compose" id="composer"></div>
+        <div class="sortbar" id="sortbar"></div>
+        <div id="feed"></div>
       </div>
-      <div>
-        <div class="title"><small>Leadership</small><h2>The Board</h2></div>
-        <div class="leaders">
-          <div class="leader"><span class="av">CP</span><div><b>V. D. Satheesan</b><span>Chairperson · Chief Minister of Kerala</span></div></div>
-          <div class="leader"><span class="av">VC</span><div><b>K. M. Chandrasekhar</b><span>Vice Chairperson</span></div></div>
-          <div class="leader"><span class="av">MS</span><div><b>Member Secretary</b><span>Head of the Board’s secretariat</span></div></div>
+      <div id="v-updates" hidden></div>
+      <div id="v-about" hidden>
+        <div class="card aboutv">
+          <section id="about-group"><h2>About Kerala Plan</h2>
+            <p><b>The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</b></p>
+            <p>Share a concern, an idea or an opinion on the things that shape daily life: your plate, your commute, your classroom, your hospital, your village. The State Planning Board reads it here.</p>
+            <p>Pick a topic and start the first conversation. Name your panchayat or ward so the Board can act on it.</p></section>
+          <section id="about-how"><h2>How Kerala Plan works</h2>
+            <ol class="steps3">
+              <li><div><b>Share</b><span>Post a concern, idea, opinion or question under the topic it belongs to. Name your district or ward.</span></div></li>
+              <li><div><b>Like, comment and share</b><span>Like what matters, reply with what you know and share posts with your neighbours. The most backed posts rise to the top.</span></div></li>
+              <li><div><b>Hear back</b><span>Board staff can reply in the thread. Their answers carry an Official badge.</span></div></li>
+            </ol></section>
+          <section id="about-rules"><h2>House rules</h2>
+            <ul><li>Be specific: name the place, ward or panchayat.</li><li>Criticise schemes and decisions, not people.</li><li>Do not share phone numbers or home addresses.</li><li>Replies marked Official come from the Board.</li></ul></section>
         </div>
-        <p style="margin:1rem 0 0"><a class="lnk" href="about.html#members">All Board members ›</a></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Counters -->
-  <section class="counters" aria-label="Key figures"><div class="wrap">
-    <div class="counter"><span id="c1"></span><b>1967</b><span>Year established</span></div>
-    <div class="counter"><span id="c2"></span><b>8</b><span>Technical divisions</span></div>
-    <div class="counter"><span id="c3"></span><b>44</b><span>Working groups, 14th Plan</span></div>
-    <div class="counter"><span id="c4"></span><b>6.19%</b><span>Real GSDP growth 2024-25</span></div>
-  </div></section>
-
-  <!-- Notices -->
-  <section class="sec grey" id="notices">
-    <div class="wrap">
-      <div class="title row"><div><small>What’s new</small><h2>News &amp; Notices</h2></div><a class="btn sm out" href="notices.html">View all</a></div>
-      <div class="news">
-        <div>
-          <div class="tabs" role="tablist" id="ntabs"></div>
-          <div class="nlist" id="nlist" role="tabpanel"></div>
-        </div>
-        <aside>
-          <div class="qow">
-            <small>Featured publication</small>
-            <h3>Economic Review 2025</h3>
-            <p style="margin:-.6rem 0 1.4rem;color:#c9d3e3;position:relative">Kerala’s economy grew 6.19 per cent in real terms in 2024-25. The Review covers every sector of the state’s economy.</p>
-            <a class="btn gold" href="publications.html#Economic Review">Download</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- Plans -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="title c"><small>Development plans</small><h2>Plans</h2></div>
-      <div class="plans">
-        <div class="plan"><div class="ph"><small>2022 – 2027</small><h3>Fourteenth Five-Year Plan</h3></div>
-          <div class="pb2"><span class="status">Final year</span><p>Prepared with 44 working groups of experts and officials. 2026-27 is the last year of the Plan.</p><a class="btn sm out" href="plans.html#fyp14">Plan details</a></div></div>
-        <div class="plan"><div class="ph"><small>2027 – 2032</small><h3>Fifteenth Five-Year Plan</h3></div>
-          <div class="pb2"><span class="status prep">In preparation</span><p>Working groups, consultations and citizen inputs through Kerala Plan will shape the next five years.</p><a class="btn sm out" href="plans.html#fyp15">Plan process</a></div></div>
-        <div class="plan"><div class="ph"><small>2026 – 2027</small><h3>Annual Plan</h3></div>
-          <div class="pb2"><span class="status">Current</span><p>Scheme-wise allocations for the current financial year, presented with the State Budget.</p><a class="btn sm out" href="plans.html#annual">Annual Plans</a></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Divisions -->
-  <section class="sec grey">
-    <div class="wrap">
-      <div class="title c"><small>Organisation</small><h2>Divisions</h2><p>The Board’s work is carried out by eight technical divisions supporting the Vice Chairperson and Member Secretary.</p></div>
-      <div class="divs" id="divs"></div>
-    </div>
-  </section>
-
-  <!-- Publications -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="title row"><div><small>Reports &amp; documents</small><h2>Publications</h2></div><a class="btn sm out" href="publications.html">All publications</a></div>
-      <div class="pubs" id="pubs"></div>
-    </div>
-  </section>
-
-  <!-- Kerala Plan -->
-  <section class="kp">
-    <div class="wrap">
-      <div>
-        <div class="title"><small lang="ml">കേരള പ്ലാൻ · Citizen participation</small><h2>Kerala Plan</h2></div>
-        <p>The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</p>
-        <div class="btns" style="margin-top:1.4rem"><a class="btn gold" href="forum.html#new">Share your view</a><a class="btn line" href="forum.html#all">Read discussions</a></div>
-      </div>
-      <div class="chips" id="kpchips"></div>
-    </div>
-  </section>
-
-  <!-- Important links -->
-  <section class="sec grey" id="links">
-    <div class="wrap">
-      <div class="title c"><small>Government portals</small><h2>Important Links</h2></div>
-      <div class="links" id="ilinks"></div>
-    </div>
-  </section>
+    <!-- right -->
+    <aside class="rcol">
+      <div class="panel"><h3>About this group</h3><div class="pad"><p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p></div><div class="stat3" id="stat3"></div></div>
+      <div class="qw" id="qw"></div>
+      <div class="panel"><h3>Board updates</h3><div id="rupd"></div></div>
+      <div class="panel"><h3>House rules</h3><ul class="rules2"><li>Be specific: name the place, ward or panchayat.</li><li>Criticise schemes and decisions, not people.</li><li>Do not share phone numbers or home addresses.</li><li>Replies marked Official come from the Board.</li></ul></div>
+    </aside>
+  </div>
 </main>
 
 <div id="site-footer"></div>
 
 <script>
 (function(){
-var K=KP,h=K.h,e=function(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
-var N=K.NOTICES.slice().sort(function(a,b){return a.date<b.date?1:-1});
-
-/* ticker (duplicated for seamless loop) */
-var tk=N.slice(0,6).map(function(n){return '<a href="notices.html#'+n.type+'">'+e(n.title)+'</a>'}).join('');
-document.getElementById('ticker').innerHTML=tk+tk;
-
-/* quick tiles */
-[['review','Economic Review','publications.html#Economic Review'],['calendar','Five-Year Plans','plans.html#fyp14'],['annual','Annual Plans','plans.html#annual'],
- ['local','Decentralised Planning','plans.html#decentralised'],['monitor','Plan Monitoring','plans.html#monitoring'],['search','Evaluation Studies','publications.html#Evaluation Study'],
- ['group','Working Groups','publications.html#Working Group Report'],['notice','Notices & Tenders','notices.html'],['posts','Kerala Plan','forum.html#all']]
- .forEach(function(t){document.getElementById('tiles').append(h('a',{class:'tile',href:t[2]},K.ico(t[0]),t[1]));});
-
-/* counters icons */
-['calendar','topics','group','review'].forEach(function(n,i){var s=document.getElementById('c'+(i+1));s.replaceWith(K.ico(n));});
-
-/* notices tabs */
-var types=['News','Circular','Tender','Recruitment'],labels={News:'News & Events',Circular:'Circulars',Tender:'Tenders',Recruitment:'Recruitment'},cur='News';
-var tabs=document.getElementById('ntabs'),list=document.getElementById('nlist');
-types.forEach(function(t){tabs.append(h('button',{type:'button',role:'tab','data-t':t,onclick:function(){cur=t;paint();}},labels[t]));});
-function paint(){
-  tabs.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.t===cur))});
-  list.innerHTML=N.filter(function(n){return n.type===cur}).slice(0,4).map(function(n){
-    return '<div class="nitem"><span class="d">'+K.fdate(n.date)+'</span><div><b>'+e(n.title)+(K.isNew(n.date)?'<span class="new">NEW</span>':'')+'</b><p>'+e(n.body)+'</p></div><a class="dl" href="notices.html#'+n.type+'">View</a></div>';
-  }).join('');
+var K=KP,h=K.h,CATS=K.CATS,CAT=K.CAT,DB=K.DB;
+var S={posts:[],comments:[],likes:[],shares:[],updates:[],ready:false,view:'feed',topic:'all',focus:null,sort:'hot',q:'',
+  open:{},full:{},expanded:{},replying:null,drafts:{},asBoard:true,flair:'Concern',composing:false,shareFor:null,showUF:false};
+function $(s){return document.querySelector(s)}
+function hue(n){var x=0;for(var i=0;i<n.length;i++)x=(x*31+n.charCodeAt(i))%360;return x;}
+function avatar(name,board,sm){
+  if(board)return h('span',{class:'av board'+(sm?' sm':''),html:K.LOGO});
+  var ini=(name||'?').split(/\s+/).map(function(w){return w[0]}).join('').slice(0,2);
+  return h('span',{class:'av'+(sm?' sm':''),style:'--hue:'+hue(name||'?')},ini);
 }
-paint();
+function myName(){return K.getName()||'You';}
+function nameOf(x){return x.board?'State Planning Board':(x.author===K.UID?(x.name||myName()):(x.name||'A citizen'));}
+function canMod(x){return x.author===K.UID||K.isStaff();}
+function postURL(id){return location.href.split('#')[0]+'#post/'+id;}
+document.getElementById('gav').innerHTML=K.LOGO;
 
-/* divisions */
-document.getElementById('divs').innerHTML=K.DIVISIONS.map(function(d){return '<div>'+K.ICON[d[0]]+'<h3>'+e(d[1])+'</h3><p>'+e(d[2])+'</p></div>'}).join('');
+/* ---------- data actions ---------- */
+async function toggleLike(t){var ref=DB.collection('likes').doc(t+'__'+K.UID);if(S.liked[t])await ref.delete();else await ref.set({t:t,u:K.UID});}
+async function addComment(post,parent,text,board){
+  text=text.trim();if(text.length<2){K.toast('Write a comment first.');return false;}
+  var off=!!(board&&K.isStaff());
+  await DB.collection('comments').add({post:post,parent:parent||null,body:text.slice(0,2000),author:off?'board':K.UID,name:off?'State Planning Board':myName(),ts:Date.now(),board:off});return true;
+}
+async function delPost(p){
+  if(!confirm('Delete this post and its comments?'))return;
+  await Promise.all(S.comments.filter(function(c){return c.post===p.id}).map(function(c){return DB.collection('comments').doc(c.id).delete()}));
+  await DB.collection('posts').doc(p.id).delete();K.toast('Post deleted.');
+  if(S.view==='post')location.hash='#all';
+}
+async function delComment(c){
+  await Promise.all(S.comments.filter(function(x){return x.parent===c.id}).map(function(x){return DB.collection('comments').doc(x.id).delete()}));
+  await DB.collection('comments').doc(c.id).delete();
+}
+function recordShare(id,via){DB.collection('shares').add({t:id,u:K.UID,via:via});}
+async function copy(text){try{await navigator.clipboard.writeText(text);return true}catch(e){var t=h('textarea',null);t.value=text;document.body.append(t);t.select();var ok=false;try{ok=document.execCommand('copy')}catch(x){}t.remove();return ok;}}
 
-/* publications */
-var seen={},pick=[];K.PUBS.forEach(function(p){if(!seen[p.k]){seen[p.k]=1;pick.push(p);}});
-document.getElementById('pubs').innerHTML=pick.map(function(p){
-  return '<a class="book" href="publications.html#'+e(p.k)+'"><div class="cover '+p.c+'"><small>'+e(p.k)+'</small><b>'+e(p.t)+'</b><span>Kerala State Planning Board</span></div><div class="bi"><b>'+e(p.t)+'</b><span class="dl">PDF</span></div></a>';
-}).join('');
+/* ---------- render ---------- */
+var pending=false;
+function render(){
+  var a=document.activeElement;
+  if(a&&(a.tagName==='TEXTAREA'||(a.tagName==='INPUT'&&a.type!=='checkbox'))&&($('#feed').contains(a)||$('#v-updates').contains(a))){if(!pending){pending=true;setTimeout(function(){pending=false;render()},700);}return;}
+  K.derive(S);
+  renderMeta();renderNav();renderRight();
+  $('#v-feed').hidden=!(S.view==='feed'||S.view==='post');$('#v-updates').hidden=S.view!=='updates';$('#v-about').hidden=S.view!=='about';
+  var tv=S.view==='post'?'feed':S.view;
+  document.querySelectorAll('#gtabs a').forEach(function(x){if(x.dataset.v===tv)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});
+  if(S.view==='feed'||S.view==='post'){renderTopicHead();renderComposer();renderSort();renderFeed();}
+  if(S.view==='updates')renderUpdates();
+}
+function voices(){var v={};S.posts.concat(S.comments).forEach(function(x){if(x.author&&x.author!=='board')v[x.author]=1});return Object.keys(v).length;}
+function renderMeta(){
+  var m=$('#gmeta');m.textContent='';
+  m.append(h('span',{class:'pub',html:K.ICON.globe+'Public group'}),h('span',null,'State Planning Board, Government of Kerala'),
+    h('span',null,h('b',null,String(voices())),' citizens taking part'),h('span',null,h('b',null,String(S.posts.length)),' posts'));
+}
+function renderNav(){
+  var counts={all:S.posts.length};S.posts.forEach(function(p){counts[p.cat]=(counts[p.cat]||0)+1;});
+  var nav=$('#tnav');nav.textContent='';
+  var cur=S.view==='feed'?S.topic:null;
+  nav.append(h('li',null,h('a',{href:'#all','aria-current':cur==='all'?'page':null},K.ico('posts'),'All posts',h('span',{class:'n'},String(counts.all||0)))));
+  CATS.forEach(function(c){nav.append(h('li',null,h('a',{href:'#topic/'+c.id,'aria-current':cur===c.id?'page':null},K.ico(c.id),c.name,h('span',{class:'n'},String(counts[c.id]||0)))));});
+}
+function renderRight(){
+  var st=$('#stat3');st.textContent='';
+  [[voices(),'Citizens'],[S.posts.length,'Posts'],[S.comments.length,'Comments']].forEach(function(x){st.append(h('div',null,h('b',null,String(x[0])),h('span',null,x[1])))});
+  var w=K.weekAsk(),q=$('#qw');q.textContent='';
+  q.append(h('small',null,'Question of the week · '+w.name),h('h3',null,w.ask),h('a',{class:'btn gold sm',href:'#topic/'+w.id},'Answer in '+w.name));
+  var r=$('#rupd');r.textContent='';
+  var ups=sortedUpdates().slice(0,3);
+  if(!ups.length)r.append(h('div',{class:'pad'},h('p',null,'Notices from the State Planning Board will appear here, such as consultations, deadlines and results.')));
+  ups.forEach(function(u){r.append(h('div',{class:'uitem'},h('div',{class:'tags'},h('span',{class:'tag '+u.kind},u.kind),h('span',null,K.ago(u.ts))),h('b',null,u.title)));});
+  if(ups.length)r.append(h('div',{class:'pad',style:'padding-top:.2rem'},h('a',{class:'lnk',href:'#updates'},'See all updates ›')));
+}
+function renderTopicHead(){
+  var t=$('#thead');t.textContent='';
+  var c=CAT[S.topic];
+  if(S.view==='post'){t.append(h('p',{style:'margin:0 0 1rem'},h('a',{class:'lnk',href:'#all'},'‹ Back to all posts')));return;}
+  if(c)t.append(h('div',{class:'card topichead'},h('span',{class:'ico'},K.ico(c.id)),h('div',null,h('h2',null,c.name),h('p',null,c.blurb)),h('div',{class:'asks'},h('span',null,'Question for you'),c.ask)));
+}
 
-/* Kerala Plan topics */
-document.getElementById('kpchips').innerHTML=K.CATS.map(function(c){return '<a href="forum.html#'+c.id+'">'+K.ICON[c.id]+e(c.name)+'</a>'}).join('');
+/* composer */
+var F={};
+function openComposer(fl){if(fl)S.flair=fl;S.composing=true;var box=$('#composer');box.dataset.mode='';renderComposer();var t=$('#ctitle');if(t){box.scrollIntoView({block:'center'});t.focus();}}
+function renderComposer(){
+  var box=$('#composer');box.hidden=S.view==='post';
+  if(!S.composing){
+    if(box.dataset.mode==='closed'&&box.dataset.n===myName())return;
+    box.textContent='';box.dataset.mode='closed';box.dataset.n=myName();
+    var first=K.getName()?K.getName().split(' ')[0]:'';
+    box.append(h('div',{class:'crow'},avatar(myName()),h('button',{class:'fake',type:'button',onclick:function(){openComposer()}},'Share a concern, idea or opinion'+(first?', '+first:'')+'…')));
+    var qb=h('div',{class:'qbar'});
+    [['Concern','var(--danger)'],['Idea','var(--ok)'],['Opinion','var(--muted)'],['Question','var(--gold-2)']].forEach(function(f){qb.append(h('button',{type:'button',onclick:function(){openComposer(f[0])}},h('i',{style:'background:'+f[1]}),f[0]));});
+    box.append(qb);return;
+  }
+  if(box.dataset.mode==='open'){var sel=$('#ccat');if(sel&&S.topic!=='all'&&!F.touched)sel.value=S.topic;return;}
+  box.dataset.mode='open';box.textContent='';
+  var nm=h('input',{id:'cname',maxlength:'60',placeholder:'Your name',autocomplete:'name','aria-label':'Your name'});nm.value=K.getName();
+  var cat=h('select',{id:'ccat','aria-label':'Topic'});CATS.forEach(function(c){cat.append(h('option',{value:c.id},c.name));});
+  cat.value=S.topic!=='all'?S.topic:'water';cat.addEventListener('change',function(){F.touched=true});
+  var dist=h('select',{id:'cdist','aria-label':'District'},h('option',{value:''},'District: not specified'));K.DISTRICTS.forEach(function(d){dist.append(h('option',{value:d},d));});
+  var title=h('input',{id:'ctitle',class:'ttl',maxlength:'140',placeholder:'A clear, specific title','aria-label':'Title'});
+  var body=h('textarea',{id:'cbody',class:'big',maxlength:'4000',placeholder:'What is happening, where, and what would you like the Board to consider?','aria-label':'Details'});
+  var seg=h('div',{class:'seg',role:'group','aria-label':'Type of post'});
+  function paintSeg(){seg.textContent='';K.FLAIRS.forEach(function(f){seg.append(h('button',{type:'button','aria-pressed':String(S.flair===f),onclick:function(){S.flair=f;paintSeg();}},f));});}
+  paintSeg();
+  var form=h('form',{novalidate:true},
+    h('div',{class:'crow'},avatar(myName()),h('div',{style:'flex:1;min-width:0'},title)),
+    body,
+    h('div',{class:'opts'},nm,cat,dist),
+    seg,
+    h('div',{class:'factions'},h('span',{class:'hint'},'Posts are visible to everyone with access to this page.'),
+      h('button',{class:'btn out sm',type:'button',onclick:function(){S.composing=false;F.touched=false;renderComposer();}},'Cancel'),h('button',{class:'btn sm',type:'submit'},'Post')));
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();var t=title.value.trim();
+    if(!nm.value.trim()){K.toast('Add your name so others know who posted.');nm.focus();return;}
+    if(t.length<6){K.toast('Add a short title of at least 6 characters.');title.focus();return;}
+    K.setName(nm.value.trim());
+    await DB.collection('posts').add({cat:cat.value,flair:S.flair,title:t,body:body.value.trim(),district:dist.value,author:K.UID,name:nm.value.trim(),ts:Date.now()});
+    K.toast('Posted to '+CAT[cat.value].name+'.');
+    var target=cat.value;S.composing=false;F.touched=false;S.sort='new';if(document.activeElement)document.activeElement.blur();
+    if(S.topic!=='all'&&S.topic!==target)location.hash='#topic/'+target;else render();
+    renderComposer();
+  });
+  box.append(form);
+}
+function renderSort(){
+  var b=$('#sortbar');b.hidden=S.view==='post';
+  if(!b.dataset.built){
+    b.dataset.built='1';
+    var sel=h('select',{'aria-label':'Sort posts'},h('option',{value:'hot'},'Most relevant'),h('option',{value:'new'},'Newest'),h('option',{value:'top'},'Most liked'));
+    sel.addEventListener('change',function(){S.sort=sel.value;render();});
+    var q=h('input',{type:'search',placeholder:'Search posts, places','aria-label':'Search posts'});
+    q.addEventListener('input',function(){S.q=q.value.trim();K.derive(S);renderFeed();});
+    b.append(h('h2',{id:'feedtitle'},'Recent activity'),q,sel);
+  }
+  b.querySelector('select').value=S.sort;
+  $('#feedtitle').textContent=CAT[S.topic]?'Posts in '+CAT[S.topic].name:'Recent activity';
+}
+function visible(){
+  if(S.view==='post')return S.posts.filter(function(p){return p.id===S.focus});
+  var L=S.posts.filter(function(p){return S.topic==='all'||p.cat===S.topic;});
+  if(S.q){var q=S.q.toLowerCase();L=L.filter(function(p){return((p.title||'')+' '+(p.body||'')+' '+(p.district||'')+' '+(p.name||'')).toLowerCase().indexOf(q)>-1;});}
+  if(S.sort==='new')L.sort(function(a,b){return b.ts-a.ts});
+  else if(S.sort==='top')L.sort(function(a,b){return(S.likes_n[b.id]||0)-(S.likes_n[a.id]||0)||b.ts-a.ts});
+  else L.sort(function(a,b){return K.hot(S,b)-K.hot(S,a)});
+  return L;
+}
 
-/* links */
-document.getElementById('ilinks').innerHTML=K.LINKS.map(function(l){return '<a href="'+l[2]+'" target="_blank" rel="noopener">'+K.ICON[l[0]]+e(l[1])+'</a>'}).join('');
+/* share menu */
+function shareMenu(id,title){
+  var url=postURL(id),txt=title+' — Kerala Plan';
+  function go(via,href){recordShare(id,via);S.shareFor=null;if(href)window.open(href,'_blank','noopener');render();}
+  var m=h('div',{class:'smenu',role:'menu'});
+  if(navigator.share)m.append(h('button',{type:'button',role:'menuitem',onclick:async function(){try{await navigator.share({title:txt,url:url});go('native');}catch(e){}}},K.ico('share'),'Share via…'));
+  m.append(
+    h('button',{type:'button',role:'menuitem',onclick:async function(){var ok=await copy(url);go('link');K.toast(ok?'Link copied.':'Copy this link: '+url);}},K.ico('link'),'Copy link'),
+    h('button',{type:'button',role:'menuitem',onclick:function(){go('whatsapp','https://wa.me/?text='+encodeURIComponent(txt+' '+url));}},h('span',{class:'b',style:'background:#25d366'},'W'),'WhatsApp'),
+    h('button',{type:'button',role:'menuitem',onclick:function(){go('facebook','https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url));}},h('span',{class:'b',style:'background:#1877f2'},'f'),'Facebook'),
+    h('button',{type:'button',role:'menuitem',onclick:function(){go('x','https://twitter.com/intent/tweet?text='+encodeURIComponent(txt)+'&url='+encodeURIComponent(url));}},h('span',{class:'b',style:'background:#111'},'X'),'X (Twitter)'));
+  return m;
+}
+document.addEventListener('click',function(e){if(S.shareFor&&!e.target.closest('.shw')){S.shareFor=null;render();}});
+
+/* comments */
+function commentInput(post,parent,key,ph){
+  var ta=h('textarea',{rows:'1',placeholder:ph,'aria-label':ph,maxlength:'2000','data-key':key});ta.value=S.drafts[key]||'';
+  var send=h('button',{class:'send',type:'button','aria-label':'Send',html:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg>'});
+  async function submit(){send.disabled=true;var ok=await addComment(post,parent,ta.value,S.asBoard);send.disabled=false;
+    if(ok){S.drafts[key]='';ta.value='';ta.blur();if(parent)S.replying=null;S.full[post]=true;render();}}
+  ta.addEventListener('input',function(){S.drafts[key]=ta.value;ta.style.height='auto';ta.style.height=ta.scrollHeight+'px';});
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submit();}});
+  send.addEventListener('click',submit);
+  var me=K.isStaff()&&S.asBoard;
+  var chk=K.isStaff()?h('label',{class:'chk'},h('input',{type:'checkbox',checked:S.asBoard,onchange:function(e){S.asBoard=e.target.checked;render();}}),'Reply as State Planning Board (Official)'):null;
+  return h('div',{class:'cin'},avatar(me?'':myName(),me,true),h('div',{class:'box'},ta,send),chk);
+}
+function commentNode(c,post){
+  var kids=S.comments.filter(function(x){return x.parent===c.id}).sort(function(a,b){return a.ts-b.ts});
+  var n=S.likes_n[c.id]||0;
+  var foot=h('div',{class:'cfoot'},
+    h('button',{type:'button','aria-pressed':String(!!S.liked[c.id]),onclick:function(){toggleLike(c.id)}},'Like'),
+    !c.parent?h('button',{type:'button',onclick:function(){S.replying=(S.replying===c.id?null:c.id);render();var t=document.querySelector('[data-key="r:'+c.id+'"]');if(t)t.focus();}},'Reply'):null,
+    h('span',null,K.ago(c.ts)),
+    n?h('span',{class:'lc',html:K.ICON.like+n}):null,
+    canMod(c)?h('button',{class:'del',type:'button',onclick:function(){delComment(c)}},'Delete'):null);
+  var box=h('div',{class:'cm'+(c.board?' off':'')},avatar(nameOf(c),c.board,true),
+    h('div',{style:'min-width:0'},h('div',{class:'bub'},h('b',null,nameOf(c),c.board?h('span',{class:'flair Official'},'Official'):null),h('p',null,c.body)),foot));
+  var rep=h('div',{class:'replies'});
+  kids.forEach(function(k){rep.append(commentNode(k,post));});
+  if(S.replying===c.id)rep.append(commentInput(post.id,c.id,'r:'+c.id,'Write a reply…'));
+  if(rep.children.length)box.append(rep);
+  return box;
+}
+function postNode(p){
+  var c=CAT[p.cat]||{name:'General',h:215},open=!!S.open[p.id]||S.view==='post',full=!!S.full[p.id]||S.view==='post';
+  var nl=S.likes_n[p.id]||0,nc=S.ccount[p.id]||0,ns=S.shares_n[p.id]||0;
+  var menu=null;
+  if(canMod(p))menu=h('div',{class:'pmenu'},h('button',{type:'button','aria-label':'Delete post',title:'Delete post',onclick:function(){delPost(p)},html:K.ICON.more}));
+  var head=h('div',{class:'phd'},avatar(nameOf(p)),
+    h('div',{class:'who'},h('b',null,nameOf(p)),
+      h('small',null,p.district?h('span',null,p.district+' ·'):null,h('a',{href:'#post/'+p.id},K.ago(p.ts)),'·',h('a',{href:'#topic/'+p.cat},c.name),h('span',{class:'flair '+(p.flair||'Opinion')},p.flair||'Opinion'))),menu);
+  var bodyP=p.body?h('p',{class:(S.expanded[p.id]||S.view==='post')?'':'clamp'},p.body):null;
+  var more=(p.body&&p.body.length>260&&!S.expanded[p.id]&&S.view!=='post')?h('button',{class:'more',type:'button',onclick:function(){S.expanded[p.id]=true;render();}},'See more'):null;
+  var body=h('div',{class:'pbody'},h('h3',null,p.title),bodyP,more);
+  var counts=h('div',{class:'counts'},
+    h('span',{class:'lk'},nl?h('i',{html:K.ICON.like}):null,nl?String(nl):'Be the first to like this'),
+    h('span',null,h('button',{type:'button',onclick:function(){S.open[p.id]=true;S.full[p.id]=true;render();}},nc+(nc===1?' comment':' comments')),' · '+ns+(ns===1?' share':' shares')));
+  var shareWrap=h('div',{class:'shw'},h('button',{type:'button','aria-haspopup':'menu','aria-expanded':String(S.shareFor===p.id),onclick:function(e){e.stopPropagation();S.shareFor=(S.shareFor===p.id?null:p.id);render();}},K.ico('share'),'Share'));
+  if(S.shareFor===p.id)shareWrap.append(shareMenu(p.id,p.title));
+  var acts=h('div',{class:'acts'},
+    h('button',{type:'button','aria-pressed':String(!!S.liked[p.id]),onclick:function(){toggleLike(p.id)}},K.ico('like'),S.liked[p.id]?'Liked':'Like'),
+    h('button',{type:'button',onclick:function(){S.open[p.id]=true;render();var t=document.querySelector('[data-key="c:'+p.id+'"]');if(t)t.focus();}},K.ico('comments'),'Comment'),
+    shareWrap);
+  var art=h('article',{class:'card post',id:'post-'+p.id},h('div',{class:'pstrip',style:'--h:'+c.h}),head,body,counts,acts);
+  var top=S.comments.filter(function(x){return x.post===p.id&&!x.parent}).sort(function(a,b){return a.ts-b.ts});
+  if(top.length||open){
+    var cm=h('div',{class:'cmts'});
+    var shown=full?top:top.slice(-1);
+    if(!full&&nc>shown.length)cm.append(h('button',{class:'morec',type:'button',onclick:function(){S.full[p.id]=true;S.open[p.id]=true;render();}},'View all '+nc+' comments'));
+    shown.forEach(function(x){cm.append(commentNode(x,p));});
+    if(open)cm.append(commentInput(p.id,null,'c:'+p.id,'Write a comment…'));
+    art.append(cm);
+  }
+  return art;
+}
+function renderFeed(){
+  var f=$('#feed');f.textContent='';if(!S.ready)return;
+  var L=visible();
+  if(!L.length){
+    var c=CAT[S.topic];
+    if(S.view==='post')f.append(h('div',{class:'empty'},h('h3',null,'Post not found'),h('p',null,'It may have been deleted.'),h('div',{style:'margin-top:1rem'},h('a',{class:'btn',href:'#all'},'All posts'))));
+    else if(S.q)f.append(h('div',{class:'empty'},h('h3',null,'No matches'),h('p',null,'Nothing matches “'+S.q+'”. Try a place name or a shorter word.')));
+    else f.append(h('div',{class:'empty'},h('h3',null,c?'No posts in '+c.name+' yet':'No posts yet'),
+      h('p',null,c?c.ask+' Be the first to answer.':'Pick a topic and start the first conversation. Name your panchayat or ward so the Board can act on it.'),
+      h('div',{style:'margin-top:1.2rem'},h('button',{class:'btn',type:'button',onclick:function(){openComposer()}},'Write a post'))));
+    return;
+  }
+  L.forEach(function(p){f.append(postNode(p));});
+}
+
+/* Board updates */
+function sortedUpdates(){return S.updates.slice().sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||b.ts-a.ts});}
+var uform=null;
+function updateForm(){
+  if(uform)return uform;
+  var kind=h('select',{'aria-label':'Type'});K.KINDS.forEach(function(k){kind.append(h('option',{value:k},k))});
+  var cat=h('select',{'aria-label':'Topic'},h('option',{value:''},'All of Kerala'));CATS.forEach(function(c){cat.append(h('option',{value:c.id},c.name))});
+  var title=h('input',{class:'ttl',maxlength:'120',placeholder:'Headline','aria-label':'Headline'});
+  var body=h('textarea',{class:'big',maxlength:'1500',placeholder:'Details, dates and how people can take part','aria-label':'Details'});
+  var pin=h('input',{type:'checkbox'});
+  var f=h('form',{class:'card compose',novalidate:true},h('div',{class:'crow'},avatar('',true),h('div',{style:'flex:1;min-width:0'},title)),body,h('div',{class:'opts'},kind,cat),
+    h('div',{class:'factions'},h('label',{class:'chk',style:'margin-right:auto'},pin,'Pin to the top'),h('button',{class:'btn sm',type:'submit'},'Publish update')));
+  f.addEventListener('submit',async function(e){e.preventDefault();var t=title.value.trim();
+    if(t.length<4){K.toast('Add a headline of at least 4 characters.');title.focus();return;}
+    await DB.collection('updates').add({kind:kind.value,cat:cat.value,title:t,body:body.value.trim(),pinned:pin.checked,ts:Date.now(),author:'board'});
+    title.value='';body.value='';pin.checked=false;S.showUF=false;if(document.activeElement)document.activeElement.blur();K.toast('Update published.');render();});
+  return uform=f;
+}
+function renderUpdates(){
+  var v=$('#v-updates');v.textContent='';
+  var bar=h('div',{class:'sortbar'},h('h2',null,'Updates from the State Planning Board'));
+  if(K.isStaff())bar.append(h('button',{class:'btn sm out',type:'button',onclick:function(){S.showUF=!S.showUF;render();}},S.showUF?'Close':'+ Post an update'));
+  v.append(bar);
+  if(K.isStaff()&&S.showUF)v.append(updateForm());
+  var ups=sortedUpdates();
+  if(!ups.length)v.append(h('div',{class:'empty'},h('h3',null,'No updates yet'),h('p',null,K.isStaff()?'Publish the first notice for citizens: a consultation, a deadline or a result.':'Notices from the State Planning Board will appear here, such as consultations, deadlines and results.')));
+  ups.forEach(function(u){
+    var c=u.cat&&CAT[u.cat];
+    v.append(h('article',{class:'card post'+(u.pinned?' pinned':'')},
+      h('div',{class:'phd'},avatar('',true),h('div',{class:'who'},h('b',null,'State Planning Board'),h('small',null,h('span',null,K.ago(u.ts)),'·',h('span',{class:'tag '+u.kind},u.kind),u.pinned?h('span',{class:'tag pinned'},'Pinned'):null,c?h('a',{href:'#topic/'+c.id},c.name):null)),
+        K.isStaff()?h('div',{class:'pmenu'},h('button',{type:'button','aria-label':'Delete update',title:'Delete update',html:K.ICON.more,onclick:function(){if(confirm('Delete this update?'))DB.collection('updates').doc(u.id).delete();}})):null),
+      h('div',{class:'pbody'},h('h3',null,u.title),u.body?h('p',null,u.body):null)));
+  });
+}
+
+/* ---------- routing ---------- */
+function route(){
+  var r=location.hash.slice(1).split('/'),scroll=null;
+  S.shareFor=null;
+  if(r[0]==='post'&&r[1]){S.view='post';S.focus=r[1];var p=S.posts.filter(function(x){return x.id===r[1]})[0];S.topic=p?p.cat:'all';}
+  else if(r[0]==='topic'&&CAT[r[1]]){S.view='feed';S.topic=r[1];}
+  else if(r[0]==='updates'){S.view='updates';}
+  else if(r[0].indexOf('about')===0){S.view='about';scroll=r[0]==='about'?null:r[0];}
+  else{S.view='feed';S.topic='all';}
+  render();
+  if(r[0]==='new'){openComposer();return;}
+  if(scroll){var el=document.getElementById(scroll);if(el)el.scrollIntoView({block:'start'});}
+  else if(location.hash&&location.hash!=='#all'||S.view!=='feed'){var g=$('.ghead');scrollTo({top:Math.min(scrollY,g.offsetTop+g.offsetHeight-90)});}
+}
+addEventListener('hashchange',route);
+
+var st=$('#staff');st.checked=K.isStaff();st.addEventListener('change',function(){K.setStaff(st.checked);render();});
+$('#reset').addEventListener('click',function(){if(confirm('Restore the sample posts? Your own posts will be removed.')){DB.reset();K.toast('Sample posts restored.');}});
+$('#sharegroup').addEventListener('click',async function(){var url=location.href.split('#')[0];
+  if(navigator.share){try{await navigator.share({title:'Kerala Plan',text:'Tell the State Planning Board what daily life looks like where you live.',url:url});return;}catch(e){return;}}
+  var ok=await copy(url);K.toast(ok?'Group link copied.':'Copy this link: '+url);});
+
+['posts','comments','likes','shares','updates'].forEach(function(n){DB.collection(n).onSnapshot(function(s){S[n]=K.docs(s);if(n==='posts'&&!S.ready){S.ready=true;route();return;}render();});});
+route();
 })();
 </script>
 </body>
