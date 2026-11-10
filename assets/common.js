@@ -186,6 +186,7 @@ function header(){
   '</div></div>'+
   '<header class="hdr"><div class="wrap">'+
     '<a class="logo" href="index.html" aria-label="Plan Keralam home"><img src="assets/img/logo-plankeralam.png" alt="Plan Keralam" width="230" height="105"><span class="sub"><b>State Planning Board</b>Government of Kerala</span></a>'+
+    '<a class="hbtn m" href="index.html#new" aria-label="New post">+ Post</a>'+
     '<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
     '<nav class="nav" id="nav" aria-label="Main"><ul>'+items+'</ul></nav>'+
     '<a class="hbtn" href="index.html#new">+ New post</a>'+
