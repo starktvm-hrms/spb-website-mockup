@@ -55,7 +55,7 @@ var ICON={
   up:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3l6 8H2z" fill="currentColor"/></svg>',
   down:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13L2 5h12z" fill="currentColor"/></svg>'
 };
-var LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#0b2545"/><circle cx="22.5" cy="9.5" r="3.6" fill="#e5a823"/><path d="M4 21c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M4 26c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/></svg>';
+var LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#b31c49"/><circle cx="22.5" cy="9.5" r="3.6" fill="#fcb50f"/><path d="M4 21c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M4 26c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/></svg>';
 
 /* Sample discussion so the demo feed is not empty. Delete SEED to launch with an empty forum. */
 function seedData(){
@@ -66,17 +66,38 @@ function seedData(){
     ['p3','education','Question','Fathima K.','Kannur','Will government colleges get more seats in new-age courses?','Many students in our district travel outside Kerala for data science and AI courses. Are there plans to add these programmes in government and aided colleges here?',50],
     ['p4','food','Idea','Joseph T.','Thrissur','Weekly farmers’ market at every panchayat office','A covered space once a week where local farmers can sell vegetables directly would cut middlemen and give us fresher food.',80],
     ['p5','roads','Concern','Suresh P.','Idukki','No bus after 8 pm on the hill route','Workers returning from town have no bus after 8 pm. Autos charge ₹400. Even one late service would help hundreds of people.',120],
-    ['p6','health','Opinion','Lakshmi N.','Kollam','Our family health centre is excellent: fund more staff, not more buildings','The FHC near us has a great doctor but only one. Queues are long by 9 am. Staff matter more than new buildings.',150]
+    ['p6','health','Opinion','Lakshmi N.','Kollam','Our family health centre is excellent: fund more staff, not more buildings','The FHC near us has a great doctor but only one. Queues are long by 9 am. Staff matter more than new buildings.',150],
+    ['p7','environment','Concern','Bindu V.','Alappuzha','Saltwater is entering our paddy fields every summer','The regulator near our padasekharam does not close fully. By April the water in the canals is too salty to irrigate. Farmers here lost almost half the crop last year.',9],
+    ['p8','governance','Question','Arun S.','Thiruvananthapuram','Can building permits be tracked online, step by step?','I applied for a house permit three months ago and have visited the office five times. A simple tracker like the passport status page would save everyone time.',14],
+    ['p9','housing','Idea','Shameer A.','Kozhikode','Rent-to-own flats for young families near town','Young couples working in town cannot afford land. Government-built flats with monthly payments that count towards ownership would keep families close to jobs.',31],
+    ['p10','health','Concern','Mary J.','Kasaragod','The nearest dialysis centre is 40 km away','My father needs dialysis three times a week. The bus journey takes two hours each way. Please consider a dialysis unit at the taluk hospital.',40],
+    ['p11','culture','Idea','Akhil R.','Pathanamthitta','Turn unused panchayat halls into evening sports centres','Our panchayat hall is locked most evenings. With some lights and a badminton court, it could keep teenagers busy and off their phones.',60],
+    ['p12','education','Idea','Nisha P.','Malappuram','Keep school libraries open in the evening','Many children have no quiet place to study at home. Opening school libraries from 4 to 7 pm, with a volunteer or librarian, would help a lot.',70],
+    ['p13','environment','Concern','George K.','Wayanad','Wild elephants are destroying crops every week','Three farms in our ward were raided this month. We need a plan for solar fencing and faster compensation, not just visits after the damage.',95],
+    ['p14','food','Question','Ramesh K.','Palakkad','Why is there no procurement centre for paddy in our block?','We have to transport paddy to the next block and wait days for payment. Is a procurement centre planned for our area?',110]
   ];
-  var d={posts:P.map(function(x){return{id:x[0],cat:x[1],flair:x[2],name:x[3],author:'s_'+x[0],district:x[4],title:x[5],body:x[6],ts:now-x[7]*H}}),
+  var posts=P.map(function(x){return{id:x[0],cat:x[1],flair:x[2],name:x[3],author:'s_'+x[0],district:x[4],title:x[5],body:x[6],ts:now-x[7]*H}});
+  posts.push({id:'b1',cat:'environment',flair:'Official',board:true,name:'State Planning Board',author:'board',district:'',
+    title:'കൂടുതൽ വ്യവസായങ്ങളോ ശുദ്ധവായുവോ? More industries or clean air?',
+    body:'വായുവിന്റെ ഗുണമേന്മ നഷ്ടപ്പെടുത്താതെ നമുക്ക് വളരാനാകില്ലേ? Can Kerala grow without losing the quality of the air we breathe?\n\nനിങ്ങളുടെ അഭിപ്രായങ്ങൾ പങ്കുവയ്ക്കൂ, കേരളത്തിന്റെ വികസന ആസൂത്രണത്തിൽ പങ്കാളികളാകൂ. Share your views in the comments and take part in planning Kerala’s development.',
+    img:'assets/img/plan-keralam-poster.jpg',ts:now-3*H});
+  var d={posts:posts,
     comments:[
       {id:'c1',post:'p1',parent:null,body:'Same in ward 9. The problem is the pump house capacity, not the pipes.',name:'Joseph T.',author:'s_c1',ts:now-4*H,board:false},
       {id:'c2',post:'p1',parent:'c1',body:'Thank you both. We have shared this with the District Planning Committee and the working group on water for the Annual Plan.',name:'State Planning Board',author:'board',ts:now-2*H,board:true},
       {id:'c3',post:'p2',parent:null,body:'Our residents’ association already does this informally. Happy to share our map.',name:'Lakshmi N.',author:'s_c3',ts:now-20*H,board:false},
-      {id:'c4',post:'p3',parent:null,body:'Yes please. Even short certificate courses would help.',name:'Anitha R.',author:'s_c4',ts:now-40*H,board:false}
+      {id:'c4',post:'p3',parent:null,body:'Yes please. Even short certificate courses would help.',name:'Anitha R.',author:'s_c4',ts:now-40*H,board:false},
+      {id:'c5',post:'b1',parent:null,body:'Both. New industries should come with strict emission checks and green belts around them.',name:'Rahul M.',author:'s_c5',ts:now-2.5*H,board:false},
+      {id:'c6',post:'b1',parent:null,body:'Our town already has dust from the quarry. Please fix that before adding more industry.',name:'Bindu V.',author:'s_c6',ts:now-2*H,board:false},
+      {id:'c7',post:'b1',parent:'c6',body:'Thank you. Please name the town and the quarry so we can pass this to the working group on environment.',name:'State Planning Board',author:'board',ts:now-1.5*H,board:true},
+      {id:'c8',post:'p7',parent:null,body:'Same problem in Kuttanad. The bund needs repair before March.',name:'Joseph T.',author:'s_c8',ts:now-7*H,board:false},
+      {id:'c9',post:'p8',parent:null,body:'Strongly agree. Even an SMS at each stage would help.',name:'Meera S.',author:'s_c9',ts:now-12*H,board:false},
+      {id:'c10',post:'p8',parent:'c9',body:'Noted. We are forwarding this to the working group on governance and services.',name:'State Planning Board',author:'board',ts:now-10*H,board:true},
+      {id:'c11',post:'p10',parent:null,body:'Praying for your father. A unit at the taluk hospital would help many families.',name:'Lakshmi N.',author:'s_c11',ts:now-36*H,board:false},
+      {id:'c12',post:'p13',parent:null,body:'Solar fencing worked in our area when the panchayat maintained it properly.',name:'Suresh P.',author:'s_c12',ts:now-90*H,board:false}
     ],likes:[],shares:[],
     updates:[{id:'u1',kind:'Consultation',cat:'',title:'Share your priorities for the 15th Five-Year Plan',body:'The Board is preparing the Fifteenth Five-Year Plan (2027-32). Post your concerns and ideas under any topic; recurring themes will go to the working groups.',pinned:true,ts:now-30*H,author:'board'}]};
-  var L={p1:14,p2:23,p3:9,p4:17,p5:6,p6:11,c1:4,c2:8,c3:3,c4:1},S={p1:3,p2:5,p4:2};
+  var L={b1:86,p1:14,p2:23,p3:9,p4:17,p5:6,p6:11,p7:19,p8:31,p9:12,p10:27,p11:8,p12:15,p13:22,p14:7,c1:4,c2:8,c3:3,c4:1,c5:12,c6:9,c7:15,c8:3,c9:6,c10:10},S={b1:24,p1:3,p2:5,p4:2,p7:4,p8:9,p10:6,p13:3};
   Object.keys(L).forEach(function(t){for(var i=0;i<L[t];i++)d.likes.push({id:t+'__x'+i,t:t,u:'x'+i})});
   Object.keys(S).forEach(function(t){for(var i=0;i<S[t];i++)d.shares.push({id:t+'__s'+i,t:t,u:'x'+i,via:'link'})});
   return d;
@@ -86,7 +107,7 @@ function seedData(){
    build keeps the same API (collection/add/doc.set/doc.delete/onSnapshot) but
    stores data in the visitor's browser. Swap it for a real backend to go live. */
 var DB=(function(){
-  var KEY='kerala-plan-v3',subs={},data=null;
+  var KEY='kerala-plan-v4',subs={},data=null;
   try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}
   if(!data)data=seedData();
   ['posts','comments','likes','shares','updates'].forEach(function(k){data[k]=data[k]||[]});
@@ -125,10 +146,12 @@ var staff=false;try{staff=localStorage.getItem('kp-staff')==='1'}catch(e){}
 /* ---------- chrome ---------- */
 var here=location.pathname.split('/').pop()||'index.html';
 var MENU=[
-  ['index.html#all','Discussion'],
+  ['index.html#top','Home'],
   ['index.html#all','Topics',CATS.map(function(c){return['index.html#topic/'+c.id,c.name,c.id]})],
-  ['index.html#updates','Board Updates'],
-  ['index.html#about','About the Group',[['index.html#about','About Kerala Plan'],['index.html#about-how','How it works'],['index.html#about-rules','House rules']]]
+  ['index.html#all','All posts'],
+  ['index.html#updates','Updates'],
+  ['index.html#about-how','How it works'],
+  ['index.html#about-rules','House rules']
 ];
 function header(){
   var items=MENU.map(function(m){

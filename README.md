@@ -2,13 +2,14 @@
 
 A public forum where citizens take part in the Kerala State Planning Board's work, like a Facebook group:
 people post suggestions and concerns, and others like, comment on and share them. The Board replies with
-Official answers and posts updates. Built on a government-portal design (navy and gold).
+Official answers and posts updates. Government-portal design in the Plan Keralam campaign colours: maroon `#B31C49` with saffron `#FCB50F`
+accents. The hero image and the sample Board post use the campaign poster (`assets/img/`).
 
 ## Pages
 
 | File | Content |
 | --- | --- |
-| `index.html` | **The forum.** Group cover and header, Discussion / Board updates / About tabs, topics, composer, feed with Like · Comment · Share, threaded comments, Official Board replies, question of the week |
+| `index.html` | **The forum.** Hero with topic tiles, Discussion / Board updates / About tabs, topics, composer, feed with Like · Comment · Share, threaded comments, Official Board replies, question of the week |
 | `about.html`, `plans.html`, `publications.html`, `notices.html`, `contact.html` | State Planning Board information pages, linked from the footer |
 | `forum.html` | Redirects to `index.html` (old links) |
 
@@ -35,5 +36,5 @@ sources (Wikipedia, the LSGD portal, news reports from 2026). Check these agains
 - Plan sizes (₹37,242 crore in 2022-23; ₹35,750 crore estimated for 2026-27)
 - Notices, circulars, tenders and recruitment items are illustrative; PDF links are placeholders
 - The forum saves posts, comments, likes and shares in the visitor's browser (`localStorage`) and starts with
-  sample posts (`seedData` in `assets/common.js`). Connect a real backend and sign-in before launch.
+  15 sample posts (`seedData` in `assets/common.js`). Connect a real backend and sign-in before launch.
 - Tick **Preview as Board staff** to post Official replies and publish Board updates.

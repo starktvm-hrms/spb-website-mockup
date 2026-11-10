@@ -15,52 +15,32 @@
 <div id="site-header"></div>
 
 <main id="main">
-  <!-- Group cover -->
-  <div class="gcover" aria-hidden="true">
-    <svg viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d4278"/><stop offset=".6" stop-color="#d98c3a"/><stop offset="1" stop-color="#f2c26b"/></linearGradient>
-        <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6a650"/><stop offset="1" stop-color="#0b2545"/></linearGradient>
-      </defs>
-      <rect width="1600" height="400" fill="url(#sky)"/>
-      <circle cx="1020" cy="235" r="55" fill="#fbe3a6" opacity=".9"/>
-      <path d="M0 270 Q200 190 420 245 T860 230 T1250 225 T1600 215 V300 H0Z" fill="#3c5a5a" opacity=".55"/>
-      <path d="M0 290 Q260 245 520 275 T1060 265 T1600 268 V310 H0Z" fill="#1f3b3b" opacity=".85"/>
-      <rect y="300" width="1600" height="100" fill="url(#lake)"/>
-      <g stroke="#fbe3a6" stroke-width="3" opacity=".45" stroke-linecap="round"><path d="M950 322h150M975 345h100M930 370h190"/></g>
-      <g transform="translate(560 300)"><path d="M0 14 Q100 32 210 14 L196 24 Q100 38 14 24Z" fill="#0b2545"/><path d="M28 14 Q55 -18 105 -20 Q155 -18 182 14Z" fill="#2a1d0f"/></g>
-      <g fill="#0b1f2e">
-        <path d="M1300 310 C1293 250 1303 195 1324 140 L1330 142 C1312 195 1304 250 1310 310Z"/>
-        <path d="M1326 142 C1282 122 1246 130 1220 156 C1256 140 1290 140 1326 148Z"/>
-        <path d="M1326 142 C1362 114 1406 116 1432 136 C1398 130 1362 136 1328 150Z"/>
-        <path d="M1326 142 C1318 106 1290 88 1262 85 C1290 100 1310 120 1320 148Z"/>
-        <path d="M1326 142 C1344 106 1372 92 1400 92 C1370 108 1350 126 1332 150Z"/>
-        <path d="M1440 316 C1436 268 1444 228 1460 188 L1466 190 C1452 228 1446 268 1450 316Z"/>
-        <path d="M1462 190 C1430 175 1404 182 1384 202 C1410 190 1436 190 1462 196Z"/>
-        <path d="M1462 190 C1490 168 1522 170 1540 184 C1514 182 1488 186 1464 198Z"/>
-        <path d="M200 312 C196 270 202 236 216 200 L221 202 C208 236 203 270 206 312Z"/>
-        <path d="M218 202 C190 190 168 196 152 214 C174 204 196 204 218 208Z"/>
-        <path d="M218 202 C240 184 266 186 282 198 C260 196 240 198 220 210Z"/>
-        <path d="M0 306 Q300 296 600 304 T1200 300 T1600 304 V318 H0Z"/>
-      </g>
-    </svg>
-  </div>
-  <div class="ghead">
+  <!-- Hero (first fold) -->
+  <section class="hero" id="top">
+    <img class="bg" src="assets/img/hero-kerala.jpg" alt="" style="object-position:right center">
     <div class="wrap">
-      <div class="gav" id="gav"></div>
-      <div>
-        <h1>Kerala Plan</h1>
-        <div class="gml" lang="ml">കേരള പ്ലാൻ · Kerala, planned together</div>
-        <div class="gmeta" id="gmeta"></div>
-      </div>
-      <div class="gact">
-        <a class="btn gold" href="#new">+ Share your view</a>
-        <button class="btn out" type="button" id="sharegroup">Share group</button>
+      <span class="kick">State Planning Board</span>
+      <h1>Kerala, planned together</h1>
+      <p class="ml" lang="ml">കേരള പ്ലാൻ</p>
+      <p class="lead">The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</p>
+      <div class="btns">
+        <a class="btn gold" href="#new">Share your view</a>
+        <a class="btn line" href="#all">Read all posts</a>
       </div>
     </div>
-    <div class="wrap"><nav class="gtabs" id="gtabs" aria-label="Group sections">
-      <a href="#all" data-v="feed">Discussion</a><a href="#updates" data-v="updates">Board updates</a><a href="#about" data-v="about">About</a>
-    </nav></div>
+  </section>
+
+  <!-- Topic quick access -->
+  <div class="wrap quick">
+    <div class="box">
+      <div class="lbl"><small>Browse by topic</small><b>What matters to you?</b></div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </div>
+
+  <div class="wrap fintro" id="forum">
+    <div class="title"><small>Kerala Plan forum</small><h2>Join the discussion</h2></div>
+    <div class="gmeta" id="gmeta"></div>
   </div>
 
   <div class="wrap fg">
@@ -76,6 +56,7 @@
 
     <!-- center -->
     <section id="center" style="min-width:0">
+      <nav class="ftabs" id="gtabs" aria-label="Forum sections"><a href="#all" data-v="feed">Discussion</a><a href="#updates" data-v="updates">Board updates</a><a href="#about" data-v="about">About</a></nav>
       <div id="v-feed">
         <div id="thead"></div>
         <div class="card compose" id="composer"></div>
@@ -129,7 +110,8 @@ function myName(){return K.getName()||'You';}
 function nameOf(x){return x.board?'State Planning Board':(x.author===K.UID?(x.name||myName()):(x.name||'A citizen'));}
 function canMod(x){return x.author===K.UID||K.isStaff();}
 function postURL(id){return location.href.split('#')[0]+'#post/'+id;}
-document.getElementById('gav').innerHTML=K.LOGO;
+var tl=document.getElementById('tiles');
+CATS.forEach(function(c){tl.append(h('a',{class:'tile',href:'#topic/'+c.id},K.ico(c.id),c.name));});
 
 /* ---------- data actions ---------- */
 async function toggleLike(t){var ref=DB.collection('likes').doc(t+'__'+K.UID);if(S.liked[t])await ref.delete();else await ref.set({t:t,u:K.UID});}
@@ -167,8 +149,8 @@ function render(){
 function voices(){var v={};S.posts.concat(S.comments).forEach(function(x){if(x.author&&x.author!=='board')v[x.author]=1});return Object.keys(v).length;}
 function renderMeta(){
   var m=$('#gmeta');m.textContent='';
-  m.append(h('span',{class:'pub',html:K.ICON.globe+'Public group'}),h('span',null,'State Planning Board, Government of Kerala'),
-    h('span',null,h('b',null,String(voices())),' citizens taking part'),h('span',null,h('b',null,String(S.posts.length)),' posts'));
+  m.append(h('span',{class:'pub',html:K.ICON.globe+'Public forum'}),
+    h('span',null,h('b',null,String(voices())),' citizens taking part'),h('span',null,h('b',null,String(S.posts.length)),' posts'),h('span',null,h('b',null,String(S.comments.length)),' comments'));
 }
 function renderNav(){
   var counts={all:S.posts.length};S.posts.forEach(function(p){counts[p.cat]=(counts[p.cat]||0)+1;});
@@ -313,7 +295,7 @@ function postNode(p){
   var nl=S.likes_n[p.id]||0,nc=S.ccount[p.id]||0,ns=S.shares_n[p.id]||0;
   var menu=null;
   if(canMod(p))menu=h('div',{class:'pmenu'},h('button',{type:'button','aria-label':'Delete post',title:'Delete post',onclick:function(){delPost(p)},html:K.ICON.more}));
-  var head=h('div',{class:'phd'},avatar(nameOf(p)),
+  var head=h('div',{class:'phd'},avatar(nameOf(p),p.board),
     h('div',{class:'who'},h('b',null,nameOf(p)),
       h('small',null,p.district?h('span',null,p.district+' ·'):null,h('a',{href:'#post/'+p.id},K.ago(p.ts)),'·',h('a',{href:'#topic/'+p.cat},c.name),h('span',{class:'flair '+(p.flair||'Opinion')},p.flair||'Opinion'))),menu);
   var bodyP=p.body?h('p',{class:(S.expanded[p.id]||S.view==='post')?'':'clamp'},p.body):null;
@@ -328,7 +310,8 @@ function postNode(p){
     h('button',{type:'button','aria-pressed':String(!!S.liked[p.id]),onclick:function(){toggleLike(p.id)}},K.ico('like'),S.liked[p.id]?'Liked':'Like'),
     h('button',{type:'button',onclick:function(){S.open[p.id]=true;render();var t=document.querySelector('[data-key="c:'+p.id+'"]');if(t)t.focus();}},K.ico('comments'),'Comment'),
     shareWrap);
-  var art=h('article',{class:'card post',id:'post-'+p.id},h('div',{class:'pstrip',style:'--h:'+c.h}),head,body,counts,acts);
+  if(p.img)body.append(h('img',{class:'pimg',src:p.img,alt:p.title,loading:'lazy'}));
+  var art=h('article',{class:'card post'+(p.board?' board-post':''),id:'post-'+p.id},head,body,counts,acts);
   var top=S.comments.filter(function(x){return x.post===p.id&&!x.parent}).sort(function(a,b){return a.ts-b.ts});
   if(top.length||open){
     var cm=h('div',{class:'cmts'});
@@ -401,14 +384,18 @@ function route(){
   else{S.view='feed';S.topic='all';}
   render();
   if(r[0]==='new'){openComposer();return;}
+  document.querySelectorAll('.nav [data-nav]').forEach(function(a){a.removeAttribute('aria-current')});
+  var key=!location.hash||location.hash==='#top'?'top':(S.view==='about'?(scroll||'about').replace('about-','about-'):(S.view==='updates'?'updates':(S.topic!=='all'?'':'all')));
+  var cur=document.querySelector('.nav [data-nav="'+key+'"]');if(cur)cur.setAttribute('aria-current','page');
+  if(!location.hash||location.hash==='#top'){if(location.hash==='#top')scrollTo({top:0,behavior:'smooth'});return;}
   if(scroll){var el=document.getElementById(scroll);if(el)el.scrollIntoView({block:'start'});}
-  else if(location.hash&&location.hash!=='#all'||S.view!=='feed'){var g=$('.ghead');scrollTo({top:Math.min(scrollY,g.offsetTop+g.offsetHeight-90)});}
+  else{var f=document.getElementById('forum');scrollTo({top:f.offsetTop-80});}
 }
 addEventListener('hashchange',route);
 
 var st=$('#staff');st.checked=K.isStaff();st.addEventListener('change',function(){K.setStaff(st.checked);render();});
 $('#reset').addEventListener('click',function(){if(confirm('Restore the sample posts? Your own posts will be removed.')){DB.reset();K.toast('Sample posts restored.');}});
-$('#sharegroup').addEventListener('click',async function(){var url=location.href.split('#')[0];
+var sg=$('#sharegroup');if(sg)sg.addEventListener('click',async function(){var url=location.href.split('#')[0];
   if(navigator.share){try{await navigator.share({title:'Kerala Plan',text:'Tell the State Planning Board what daily life looks like where you live.',url:url});return;}catch(e){return;}}
   var ok=await copy(url);K.toast(ok?'Group link copied.':'Copy this link: '+url);});
 
