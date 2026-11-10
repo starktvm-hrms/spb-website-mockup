@@ -1,9 +1,10 @@
-# Kerala Plan · State Planning Board — website mockup
+# Plan Keralam · State Planning Board — website mockup
 
 A public forum where citizens take part in the Kerala State Planning Board's work, like a Facebook group:
 people post suggestions and concerns, and others like, comment on and share them. The Board replies with
-Official answers and posts updates. Government-portal design in the Plan Keralam campaign colours: maroon `#B31C49` with saffron `#FCB50F`
-accents. The hero image and the sample Board post use the campaign poster (`assets/img/`).
+Official answers and posts updates. Branded **Plan Keralam — Debate. Discuss. Decide.** Colours follow the reference city-government layout:
+forest green `#2F3E37`, sage `#BDCBCE`, sand `#E9DFD3`, taupe `#BDA59B` and coral `#EA917F`. The logo,
+hero image and Board posts use the campaign artwork in `assets/img/`.
 
 ## Pages
 
@@ -36,5 +37,5 @@ sources (Wikipedia, the LSGD portal, news reports from 2026). Check these agains
 - Plan sizes (₹37,242 crore in 2022-23; ₹35,750 crore estimated for 2026-27)
 - Notices, circulars, tenders and recruitment items are illustrative; PDF links are placeholders
 - The forum saves posts, comments, likes and shares in the visitor's browser (`localStorage`) and starts with
-  15 sample posts (`seedData` in `assets/common.js`). Connect a real backend and sign-in before launch.
+  18 sample posts (4 Board posts with campaign posters) (`seedData` in `assets/common.js`). Connect a real backend and sign-in before launch.
 - Tick **Preview as Board staff** to post Official replies and publish Board updates.

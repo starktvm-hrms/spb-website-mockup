@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kerala Plan · State Planning Board</title>
-<meta name="description" content="Kerala Plan: a public forum where citizens share concerns, ideas and opinions with the Kerala State Planning Board.">
+<title>Plan Keralam · State Planning Board</title>
+<meta name="description" content="Plan Keralam: a public forum where citizens share concerns, ideas and opinions with the Kerala State Planning Board.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/gov.css">
@@ -39,7 +39,7 @@
   </div>
 
   <div class="wrap fintro" id="forum">
-    <div class="title"><small>Kerala Plan forum</small><h2>Join the discussion</h2></div>
+    <div class="title"><small>Plan Keralam forum · Debate. Discuss. Decide.</small><h2>Join the discussion</h2></div>
     <div class="gmeta" id="gmeta"></div>
   </div>
 
@@ -66,11 +66,11 @@
       <div id="v-updates" hidden></div>
       <div id="v-about" hidden>
         <div class="card aboutv">
-          <section id="about-group"><h2>About Kerala Plan</h2>
+          <section id="about-group"><h2>About Plan Keralam</h2>
             <p><b>The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</b></p>
             <p>Share a concern, an idea or an opinion on the things that shape daily life: your plate, your commute, your classroom, your hospital, your village. The State Planning Board reads it here.</p>
             <p>Pick a topic and start the first conversation. Name your panchayat or ward so the Board can act on it.</p></section>
-          <section id="about-how"><h2>How Kerala Plan works</h2>
+          <section id="about-how"><h2>How Plan Keralam works</h2>
             <ol class="steps3">
               <li><div><b>Share</b><span>Post a concern, idea, opinion or question under the topic it belongs to. Name your district or ward.</span></div></li>
               <li><div><b>Like, comment and share</b><span>Like what matters, reply with what you know and share posts with your neighbours. The most backed posts rise to the top.</span></div></li>
@@ -247,7 +247,7 @@ function visible(){
 
 /* share menu */
 function shareMenu(id,title){
-  var url=postURL(id),txt=title+' — Kerala Plan';
+  var url=postURL(id),txt=title+' — Plan Keralam';
   function go(via,href){recordShare(id,via);S.shareFor=null;if(href)window.open(href,'_blank','noopener');render();}
   var m=h('div',{class:'smenu',role:'menu'});
   if(navigator.share)m.append(h('button',{type:'button',role:'menuitem',onclick:async function(){try{await navigator.share({title:txt,url:url});go('native');}catch(e){}}},K.ico('share'),'Share via…'));
@@ -396,7 +396,7 @@ addEventListener('hashchange',route);
 var st=$('#staff');st.checked=K.isStaff();st.addEventListener('change',function(){K.setStaff(st.checked);render();});
 $('#reset').addEventListener('click',function(){if(confirm('Restore the sample posts? Your own posts will be removed.')){DB.reset();K.toast('Sample posts restored.');}});
 var sg=$('#sharegroup');if(sg)sg.addEventListener('click',async function(){var url=location.href.split('#')[0];
-  if(navigator.share){try{await navigator.share({title:'Kerala Plan',text:'Tell the State Planning Board what daily life looks like where you live.',url:url});return;}catch(e){return;}}
+  if(navigator.share){try{await navigator.share({title:'Plan Keralam',text:'Tell the State Planning Board what daily life looks like where you live.',url:url});return;}catch(e){return;}}
   var ok=await copy(url);K.toast(ok?'Group link copied.':'Copy this link: '+url);});
 
 ['posts','comments','likes','shares','updates'].forEach(function(n){DB.collection(n).onSnapshot(function(s){S[n]=K.docs(s);if(n==='posts'&&!S.ready){S.ready=true;route();return;}render();});});

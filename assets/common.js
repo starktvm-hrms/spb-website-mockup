@@ -1,4 +1,4 @@
-/* Kerala Plan · State Planning Board — shared header, footer, data and helpers. */
+/* Plan Keralam · State Planning Board — shared header, footer, data and helpers. */
 (function(){
 var CATS=[
  {id:'water',name:'Water & Sanitation',h:200,blurb:'Drinking water, wells, pipelines, drainage and cleanliness in your village and ward.',ask:'Does your ward get safe drinking water every day of the year?'},
@@ -55,7 +55,7 @@ var ICON={
   up:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3l6 8H2z" fill="currentColor"/></svg>',
   down:'<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13L2 5h12z" fill="currentColor"/></svg>'
 };
-var LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#b31c49"/><circle cx="22.5" cy="9.5" r="3.6" fill="#fcb50f"/><path d="M4 21c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M4 26c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/></svg>';
+var LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="#2f3e37"/><circle cx="22.5" cy="9.5" r="3.6" fill="#ea917f"/><path d="M4 21c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M4 26c3.2-3 5.8-3 8 0s4.8 3 8 0 5.8-3 8 0" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/></svg>';
 
 /* Sample discussion so the demo feed is not empty. Delete SEED to launch with an empty forum. */
 function seedData(){
@@ -81,6 +81,18 @@ function seedData(){
     title:'കൂടുതൽ വ്യവസായങ്ങളോ ശുദ്ധവായുവോ? More industries or clean air?',
     body:'വായുവിന്റെ ഗുണമേന്മ നഷ്ടപ്പെടുത്താതെ നമുക്ക് വളരാനാകില്ലേ? Can Kerala grow without losing the quality of the air we breathe?\n\nനിങ്ങളുടെ അഭിപ്രായങ്ങൾ പങ്കുവയ്ക്കൂ, കേരളത്തിന്റെ വികസന ആസൂത്രണത്തിൽ പങ്കാളികളാകൂ. Share your views in the comments and take part in planning Kerala’s development.',
     img:'assets/img/plan-keralam-poster.jpg',ts:now-3*H});
+  posts.push({id:'b2',cat:'housing',flair:'Official',board:true,name:'State Planning Board',author:'board',district:'',
+    title:'Maxxing… Coastal Livelihoods',
+    body:'Kerala’s 14th Five-Year Plan aims to make fishing safer and open up more livelihood opportunities along the coast.\n\nIf you live or work on the coast, tell us: what would make fishing safer, and what other work would you like to see in your village?',
+    img:'assets/img/poster-coastal-livelihoods.jpg',ts:now-20*H});
+  posts.push({id:'b3',cat:'education',flair:'Official',board:true,name:'State Planning Board',author:'board',district:'',
+    title:'Will AI take your job or change it?',
+    body:'AI is changing the work world. The 14th Five-Year Plan Approach Paper stresses the need to equip young people with the skills to take on these changes and new opportunities.\n\nWhat skills should our colleges, ITIs and skill centres teach first? Share your view.',
+    img:'assets/img/poster-ai-jobs.jpg',ts:now-45*H});
+  posts.push({id:'b4',cat:'roads',flair:'Official',board:true,name:'State Planning Board',author:'board',district:'',
+    title:'Affordability or sustainability?',
+    body:'Can we have our cake and save the planet too? Cheaper travel, cleaner travel, or both: how should Kerala plan its trains, buses and roads?\n\nShare your views and help shape Kerala’s plans. Find us on Facebook, X and Instagram: @PlanKerala',
+    img:'assets/img/poster-affordability-sustainability.jpg',ts:now-75*H});
   var d={posts:posts,
     comments:[
       {id:'c1',post:'p1',parent:null,body:'Same in ward 9. The problem is the pump house capacity, not the pipes.',name:'Joseph T.',author:'s_c1',ts:now-4*H,board:false},
@@ -94,10 +106,17 @@ function seedData(){
       {id:'c9',post:'p8',parent:null,body:'Strongly agree. Even an SMS at each stage would help.',name:'Meera S.',author:'s_c9',ts:now-12*H,board:false},
       {id:'c10',post:'p8',parent:'c9',body:'Noted. We are forwarding this to the working group on governance and services.',name:'State Planning Board',author:'board',ts:now-10*H,board:true},
       {id:'c11',post:'p10',parent:null,body:'Praying for your father. A unit at the taluk hospital would help many families.',name:'Lakshmi N.',author:'s_c11',ts:now-36*H,board:false},
+      {id:'c13',post:'b2',parent:null,body:'Better weather alerts on our phones in Malayalam would save lives. Many boats still go out without warnings.',name:'Xavier D.',author:'s_c13',ts:now-18*H,board:false},
+      {id:'c14',post:'b2',parent:null,body:'Women in our village can process and dry fish if we get a common facility with cold storage.',name:'Bindu V.',author:'s_c14',ts:now-15*H,board:false},
+      {id:'c15',post:'b2',parent:'c14',body:'Thank you. Which panchayat is this? We will share it with the working group on fisheries.',name:'State Planning Board',author:'board',ts:now-12*H,board:true},
+      {id:'c16',post:'b3',parent:null,body:'Teach basic coding and data skills in every higher secondary school, not just in engineering colleges.',name:'Fathima K.',author:'s_c16',ts:now-40*H,board:false},
+      {id:'c17',post:'b3',parent:null,body:'Older workers need retraining too. Please include short evening courses for people already working.',name:'Arun S.',author:'s_c17',ts:now-38*H,board:false},
+      {id:'c18',post:'b4',parent:null,body:'More MEMU trains between towns would take thousands of cars off the road.',name:'Shameer A.',author:'s_c18',ts:now-70*H,board:false},
+      {id:'c19',post:'b4',parent:null,body:'Both are possible if electric buses are run well. Fares must stay low though.',name:'Mary J.',author:'s_c19',ts:now-60*H,board:false},
       {id:'c12',post:'p13',parent:null,body:'Solar fencing worked in our area when the panchayat maintained it properly.',name:'Suresh P.',author:'s_c12',ts:now-90*H,board:false}
     ],likes:[],shares:[],
     updates:[{id:'u1',kind:'Consultation',cat:'',title:'Share your priorities for the 15th Five-Year Plan',body:'The Board is preparing the Fifteenth Five-Year Plan (2027-32). Post your concerns and ideas under any topic; recurring themes will go to the working groups.',pinned:true,ts:now-30*H,author:'board'}]};
-  var L={b1:86,p1:14,p2:23,p3:9,p4:17,p5:6,p6:11,p7:19,p8:31,p9:12,p10:27,p11:8,p12:15,p13:22,p14:7,c1:4,c2:8,c3:3,c4:1,c5:12,c6:9,c7:15,c8:3,c9:6,c10:10},S={b1:24,p1:3,p2:5,p4:2,p7:4,p8:9,p10:6,p13:3};
+  var L={b2:64,b3:112,b4:58,c13:21,c14:17,c15:9,c16:26,c17:14,c18:19,c19:8,b1:86,p1:14,p2:23,p3:9,p4:17,p5:6,p6:11,p7:19,p8:31,p9:12,p10:27,p11:8,p12:15,p13:22,p14:7,c1:4,c2:8,c3:3,c4:1,c5:12,c6:9,c7:15,c8:3,c9:6,c10:10},S={b2:18,b3:41,b4:15,b1:24,p1:3,p2:5,p4:2,p7:4,p8:9,p10:6,p13:3};
   Object.keys(L).forEach(function(t){for(var i=0;i<L[t];i++)d.likes.push({id:t+'__x'+i,t:t,u:'x'+i})});
   Object.keys(S).forEach(function(t){for(var i=0;i<S[t];i++)d.shares.push({id:t+'__s'+i,t:t,u:'x'+i,via:'link'})});
   return d;
@@ -107,7 +126,7 @@ function seedData(){
    build keeps the same API (collection/add/doc.set/doc.delete/onSnapshot) but
    stores data in the visitor's browser. Swap it for a real backend to go live. */
 var DB=(function(){
-  var KEY='kerala-plan-v4',subs={},data=null;
+  var KEY='kerala-plan-v5',subs={},data=null;
   try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}
   if(!data)data=seedData();
   ['posts','comments','likes','shares','updates'].forEach(function(k){data[k]=data[k]||[]});
@@ -166,7 +185,7 @@ function header(){
       '<button type="button" data-fs="13px" aria-label="Smaller text">A-</button><button type="button" data-fs="15px" aria-label="Default text size">A</button><button type="button" data-fs="17px" aria-label="Larger text">A+</button></div>'+
   '</div></div>'+
   '<header class="hdr"><div class="wrap">'+
-    '<a class="logo" href="index.html" aria-label="Kerala Plan home">'+LOGO+'<span><b>Kerala Plan</b><small><span lang="ml">കേരള പ്ലാൻ</span> · State Planning Board</small></span></a>'+
+    '<a class="logo" href="index.html" aria-label="Plan Keralam home"><img src="assets/img/logo-plankeralam.png" alt="Plan Keralam" width="230" height="105"><span class="sub"><b>State Planning Board</b>Government of Kerala</span></a>'+
     '<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
     '<nav class="nav" id="nav" aria-label="Main"><ul>'+items+'</ul></nav>'+
     '<a class="hbtn" href="index.html#new">+ New post</a>'+
@@ -175,10 +194,10 @@ function header(){
 function footer(){
   var t=CATS.map(function(c){return '<li><a href="index.html#topic/'+c.id+'">'+c.name+'</a></li>'}).join('');
   return '<footer class="ftr"><div class="wrap top">'+
-    '<div><a class="logo" href="index.html">'+LOGO+'<span><b>Kerala Plan</b><small>State Planning Board · Government of Kerala</small></span></a>'+
+    '<div><a class="logo" href="index.html" aria-label="Plan Keralam home"><img src="assets/img/logo-plankeralam-light.png" alt="Plan Keralam" width="230" height="105"><span class="sub"><b>State Planning Board</b>Government of Kerala</span></a>'+
       '<p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p>'+
       '<p style="font-size:.85rem">Kerala State Planning Board, Pattom, Thiruvananthapuram, Kerala 695 004 · 0471 254 0208</p></div>'+
-    '<div><h4>Kerala Plan</h4><ul><li><a href="index.html#all">Discussion</a></li><li><a href="index.html#new">Share your view</a></li><li><a href="index.html#updates">Board updates</a></li><li><a href="index.html#about-how">How it works</a></li><li><a href="index.html#about-rules">House rules</a></li></ul></div>'+
+    '<div><h4>Plan Keralam</h4><ul><li><a href="index.html#all">Discussion</a></li><li><a href="index.html#new">Share your view</a></li><li><a href="index.html#updates">Board updates</a></li><li><a href="index.html#about-how">How it works</a></li><li><a href="index.html#about-rules">House rules</a></li></ul></div>'+
     '<div><h4>Topics</h4><ul class="cols2">'+t+'</ul></div>'+
     '<div><h4>State Planning Board</h4><ul><li><a href="about.html">About the Board</a></li><li><a href="plans.html">Plans</a></li><li><a href="publications.html">Publications</a></li><li><a href="notices.html">Notices &amp; Tenders</a></li><li><a href="contact.html">Contact &amp; RTI</a></li></ul></div>'+
   '</div><div class="bot"><div class="wrap"><span>© '+new Date().getFullYear()+' Kerala State Planning Board, Government of Kerala</span><span><a href="about.html">About the Board</a> · <a href="contact.html#rti">RTI</a> · <a href="contact.html">Contact</a></span></div></div></footer>'+
@@ -204,7 +223,7 @@ var NOTICES=[
   {type:'News',date:'2026-10-07',title:'Board to empanel consultants and think tanks for the 15th Five-Year Plan (2027-32)',body:'The State Planning Board has decided to empanel consulting firms and think tanks to support preparation of the Fifteenth Five-Year Plan.'},
   {type:'News',date:'2026-07-21',title:'State Planning Board reconstituted',body:'The Government of Kerala reconstituted the State Planning Board with the Chief Minister as Chairperson and K. M. Chandrasekhar as Vice Chairperson. Expert members will be notified separately.'},
   {type:'News',date:'2026-01-28',title:'Economic Review 2025 placed before the Legislative Assembly',body:'Kerala’s GSDP grew 6.19 per cent in real terms in 2024-25. The Review was released ahead of the State Budget.'},
-  {type:'News',date:'2026-11-03',title:'Kerala Plan: citizens invited to share priorities for the 15th Plan',body:'Share concerns, ideas and opinions on nine topics, from water and sanitation to governance and services.'},
+  {type:'News',date:'2026-11-03',title:'Plan Keralam: citizens invited to share priorities for the 15th Plan',body:'Share concerns, ideas and opinions on nine topics, from water and sanitation to governance and services.'},
   {type:'Circular',date:'2026-09-15',title:'Guidelines for formulation of Annual Plan 2027-28 by local governments',body:'Circular to panchayats, municipalities and corporations on timelines and procedure.'},
   {type:'Circular',date:'2026-08-02',title:'Formation of working groups for the 15th Five-Year Plan',body:'Order constituting sectoral working groups.'},
   {type:'Tender',date:'2026-10-20',title:'Expression of Interest: empanelment of consulting firms and think tanks',body:'EOI for technical support to the 15th Five-Year Plan.'},
