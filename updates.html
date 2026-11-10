@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Updates and Notices</title>
+<meta name="description" content="Notices, consultations, deadlines, results and tenders from the Kerala State Planning Board.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="phead"><div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> / Updates</div>
+    <h1>Updates &amp; notices</h1>
+    <p>Consultations, deadlines, results and tenders from the State Planning Board.</p>
+  </div></section>
+  <section class="section"><div class="container" style="max-width:52rem">
+    <div class="filters" id="filters" role="group" aria-label="Filter updates"></div>
+    <div class="list" id="list"></div>
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<script>
+(function(){
+  var S=window.SPB,kind='All';
+  var fl=document.getElementById('filters'),list=document.getElementById('list');
+  ['All','Notice','Consultation','Deadline','Result','Tender'].forEach(function(k){
+    var b=document.createElement('button');b.type='button';b.className='chip';b.dataset.k=k;b.textContent=k;b.onclick=function(){kind=k;paint()};fl.append(b);});
+  function paint(){
+    fl.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.k===kind))});
+    var L=S.sortedUpdates().filter(function(u){return kind==='All'||u.kind===kind});
+    list.innerHTML=L.length?L.map(S.updateHTML).join(''):'<div class="card" style="padding:2rem;text-align:center;color:var(--muted)">No '+kind.toLowerCase()+' notices right now.</div>';
+  }
+  paint();
+})();
+</script>
+</body>
+</html>

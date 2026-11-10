@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact the Board</title>
+<meta name="description" content="Contact the Kerala State Planning Board, Pattom, Thiruvananthapuram. Right to Information details.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="phead"><div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+    <h1>Contact us</h1>
+    <p>Write to the Board, visit our office in Thiruvananthapuram, or file a Right to Information request.</p>
+  </div></section>
+  <section class="section"><div class="container split">
+    <div class="card" style="padding:1.3rem">
+      <h2 style="font:800 1.3rem var(--font-display);margin:0 0 .3rem">Send a message</h2>
+      <p style="margin:0 0 1rem;color:var(--muted)">For ideas or concerns about development in your area, <a href="participate.html">Have your say</a> is the fastest way to be heard publicly.</p>
+      <form class="form" id="cf" novalidate>
+        <div class="row"><div class="field"><label for="n">Name</label><input id="n" required autocomplete="name"></div><div class="field"><label for="em">Email</label><input id="em" type="email" required autocomplete="email"></div></div>
+        <div class="field"><label for="sub">Subject</label><select id="sub"><option>General enquiry</option><option>Publications</option><option>Local government planning</option><option>Media</option><option>Careers &amp; internships</option></select></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" required></textarea></div>
+        <div><button class="btn primary" type="submit">Send message</button></div>
+      </form>
+    </div>
+    <aside class="side">
+      <div class="card"><h2>Office</h2>
+        <p style="margin:0"><b>Kerala State Planning Board</b><br>Pattom, Thiruvananthapuram<br>Kerala 695 004</p>
+        <p style="margin:.6rem 0 0;color:var(--muted);font-size:.88rem">Office hours: 10:00 – 17:00, Monday to Saturday (except second Saturdays and public holidays)</p>
+        <div class="note" style="margin-top:.8rem">Phone, fax and email to be confirmed from the official directory before launch.</div>
+      </div>
+      <div class="card" id="rti"><h2>Right to Information</h2>
+        <p style="margin:0;color:var(--muted)">Requests under the RTI Act, 2005 can be addressed to the State Public Information Officer of the Board. The names of the SPIO and Appellate Authority will be listed here.</p>
+      </div>
+    </aside>
+  </div></section>
+</main>
+<div id="site-footer"></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script>
+document.getElementById('cf').addEventListener('submit',function(e){
+  e.preventDefault();var t=document.getElementById('toast');
+  var ok=['n','em','msg'].every(function(id){return document.getElementById(id).value.trim()});
+  t.textContent=ok?'Thank you. This mockup does not send messages yet.':'Please fill in your name, email and message.';
+  t.hidden=false;setTimeout(function(){t.hidden=true},3200);if(ok)e.target.reset();
+});
+</script>
+</body>
+</html>
