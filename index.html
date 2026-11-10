@@ -3,138 +3,259 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kerala State Planning Board</title>
-<meta name="description" content="Kerala State Planning Board: Five-Year and Annual Plans, the Economic Review, decentralised planning and citizen participation.">
+<title>Kerala Plan · State Planning Board</title>
+<meta name="description" content="Kerala Plan: tell the State Planning Board what daily life looks like where you live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/style.css">
-<script src="assets/site.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
 </head>
 <body>
 <div id="site-header"></div>
 
 <main id="main">
+  <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <div>
-        <span class="eyebrow" style="color:var(--gold)">Kerala State Planning Board</span>
-        <h1>Kerala, planned together</h1>
-        <p class="ml-tag ml">ഒരുമിച്ച് ആസൂത്രണം ചെയ്യുന്ന കേരളം</p>
-        <p class="lead">The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. We prepare Kerala’s plans, track how they are carried out and listen to what daily life looks like where you live.</p>
-        <div class="cta">
-          <a class="btn gold" href="participate.html">Share your view</a>
-          <a class="btn" href="plans.html">Explore the plans</a>
-          <a class="btn" href="publications.html">Economic Review 2025</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 400 300">
-          <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e6b56"/><stop offset="1" stop-color="#13846a"/></linearGradient></defs>
-          <rect width="400" height="300" rx="22" fill="url(#sky)"/>
-          <circle cx="300" cy="80" r="34" fill="#c4921c"/>
-          <path d="M0 170 Q70 110 140 150 T280 140 T400 150 V300 H0Z" fill="#0a5546"/>
-          <path d="M0 200 Q90 160 180 190 T400 185 V300 H0Z" fill="#073f33"/>
-          <g fill="none" stroke="#f4fbf7" stroke-width="4" stroke-linecap="round">
-            <path d="M20 235c16-14 30-14 42 0s26 14 42 0 30-14 42 0 26 14 42 0 30-14 42 0 26 14 42 0 30-14 42 0 26 14 42 0" opacity=".9"/>
-            <path d="M20 262c16-14 30-14 42 0s26 14 42 0 30-14 42 0 26 14 42 0 30-14 42 0 26 14 42 0 30-14 42 0 26 14 42 0" opacity=".45"/>
-          </g>
-          <g stroke="#c4921c" stroke-width="3" fill="none" stroke-linecap="round">
-            <path d="M84 200 Q80 160 92 120"/>
-            <path d="M92 120q-22-6-36 6M92 120q20-12 38-2M92 120q-10-20-28-22M92 120q14-18 30-16"/>
-          </g>
-          <g fill="#f4fbf7" opacity=".9">
-            <rect x="214" y="168" width="10" height="26" rx="2"/><rect x="230" y="156" width="10" height="38" rx="2"/><rect x="246" y="142" width="10" height="52" rx="2"/><rect x="262" y="126" width="10" height="68" rx="2"/>
-          </g>
-          <path d="M206 132 L262 104 L276 112" fill="none" stroke="#c4921c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <svg class="bg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d4278"/><stop offset=".55" stop-color="#d98c3a"/><stop offset="1" stop-color="#f2c26b"/></linearGradient>
+        <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6a650"/><stop offset="1" stop-color="#0b2545"/></linearGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#sky)"/>
+      <circle cx="1180" cy="380" r="70" fill="#fbe3a6" opacity=".9"/>
+      <path d="M600 430 Q760 330 900 400 T1200 380 T1600 360 V470 H600Z" fill="#3c5a5a" opacity=".55"/>
+      <path d="M700 460 Q860 400 1020 440 T1360 420 T1600 430 V480 H700Z" fill="#1f3b3b" opacity=".8"/>
+      <rect y="470" width="1600" height="230" fill="url(#lake)"/>
+      <g stroke="#fbe3a6" stroke-width="3" opacity=".45" stroke-linecap="round">
+        <path d="M1100 500h160M1130 525h110M1080 555h200M1150 590h80"/>
+      </g>
+      <!-- houseboat -->
+      <g transform="translate(860 470)">
+        <path d="M0 18 Q110 40 230 18 L215 30 Q110 48 15 30Z" fill="#0b2545"/>
+        <path d="M30 18 Q60 -22 115 -24 Q170 -22 200 18Z" fill="#2a1d0f"/>
+        <path d="M45 18 Q70 -10 115 -12 Q160 -10 185 18" fill="none" stroke="#e5a823" stroke-width="2" opacity=".7"/>
+      </g>
+      <!-- palms -->
+      <g fill="#0b1f2e">
+        <path d="M1380 480 C1372 400 1384 330 1408 260 L1414 262 C1394 330 1384 400 1390 480Z"/>
+        <path d="M1410 262 C1360 240 1320 250 1290 280 C1330 262 1370 262 1410 268Z"/>
+        <path d="M1410 262 C1450 230 1500 232 1530 255 C1490 248 1450 254 1412 270Z"/>
+        <path d="M1410 262 C1400 220 1370 200 1340 196 C1370 214 1392 236 1404 268Z"/>
+        <path d="M1410 262 C1430 220 1462 204 1494 204 C1460 222 1436 242 1416 270Z"/>
+        <path d="M1410 262 C1380 270 1356 300 1350 330 C1370 300 1390 284 1414 270Z"/>
+        <path d="M1510 490 C1506 430 1516 380 1534 330 L1540 332 C1524 380 1516 430 1520 490Z"/>
+        <path d="M1536 332 C1500 314 1470 322 1448 344 C1478 332 1506 332 1536 338Z"/>
+        <path d="M1536 332 C1566 308 1600 310 1620 326 C1592 322 1564 326 1538 340Z"/>
+        <path d="M1536 332 C1530 300 1508 284 1486 282 C1508 296 1524 312 1532 338Z"/>
+        <path d="M1250 480 C1246 440 1252 405 1266 370 L1271 372 C1258 405 1253 440 1256 480Z"/>
+        <path d="M1268 372 C1240 360 1218 366 1202 384 C1224 374 1246 374 1268 378Z"/>
+        <path d="M1268 372 C1290 354 1316 356 1332 368 C1310 366 1290 368 1270 380Z"/>
+        <path d="M1200 478 Q1400 462 1600 470 V492 Q1400 486 1200 494Z"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <span class="kick">State Planning Board</span>
+      <h1>Kerala, planned together</h1>
+      <p class="ml" lang="ml">കേരള പ്ലാൻ</p>
+      <p class="lead">The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</p>
+      <div class="btns">
+        <a class="btn gold" href="forum.html#new">Share your view</a>
+        <a class="btn line" href="forum.html#all">Read all posts</a>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <div class="stats" aria-label="Key figures">
-      <div class="stat card"><b>6.19%</b><span>Real GSDP growth</span><small>2024-25 · Economic Review 2025</small></div>
-      <div class="stat card"><b>14th</b><span>Five-Year Plan</span><small>2022-27, now in its final years</small></div>
-      <div class="stat card"><b>1,200+</b><span>Local governments</span><small>prepare their own plans each year</small></div>
-      <div class="stat card"><b>1967</b><span>Board established</span><small>Advising Kerala for nearly 60 years</small></div>
+  <!-- Quick access -->
+  <div class="wrap quick">
+    <div class="box">
+      <div class="lbl"><small>Browse by topic</small><b>What matters to you?</b></div>
+      <div class="tiles" id="tiles"></div>
     </div>
   </div>
 
-  <section class="section">
-    <div class="container split">
+  <!-- About -->
+  <section class="sec">
+    <div class="wrap about">
+      <div class="pic" aria-hidden="true">
+        <svg viewBox="0 0 520 400">
+          <rect width="520" height="400" fill="#0b2545"/>
+          <g fill="none" stroke="#1d4278" stroke-width="1">
+            <path d="M0 50h520M0 100h520M0 150h520M0 200h520M0 250h520M0 300h520M0 350h520M65 0v400M130 0v400M195 0v400M260 0v400M325 0v400M390 0v400M455 0v400"/>
+          </g>
+          <!-- simplified map outline of Kerala's coast, stylised -->
+          <path d="M210 30 C230 60 236 90 250 120 C262 150 270 175 285 205 C298 232 308 262 318 290 C326 316 334 345 340 372 L360 372 C356 340 350 312 344 284 C336 250 326 222 318 192 C306 160 292 130 280 100 C268 72 256 48 240 26Z" fill="#e5a823" opacity=".95"/>
+          <g fill="#fff">
+            <circle cx="236" cy="70" r="5"/><circle cx="262" cy="140" r="5"/><circle cx="292" cy="215" r="5"/><circle cx="318" cy="285" r="5"/><circle cx="346" cy="352" r="6"/>
+          </g>
+          <g stroke="#fff" stroke-width="1.5" opacity=".6" fill="none">
+            <path d="M236 70 L120 90M262 140 L400 120M292 215 L140 240M318 285 L430 270M346 352 L200 360"/>
+          </g>
+          <g fill="#fff" font-family="Montserrat,Arial" font-weight="700" font-size="13" letter-spacing="1">
+            <text x="40" y="94">WATER</text><text x="408" y="124">EDUCATION</text><text x="60" y="244">HEALTH</text><text x="438" y="274">ROADS</text><text x="96" y="364">HOUSING</text>
+          </g>
+        </svg>
+      </div>
       <div>
-        <div class="sh"><div><span class="eyebrow">Notices</span><h2>Important updates</h2></div><a class="btn sm" href="updates.html">All updates</a></div>
-        <div class="list" id="updates"></div>
-      </div>
-      <div style="display:grid;gap:1rem">
-        <div class="ask card" id="ask"></div>
-        <div class="card" style="padding:1.1rem 1.2rem">
-          <span class="eyebrow">Quick links</span>
-          <ul style="margin:.3rem 0 0;padding-left:1.1rem;display:grid;gap:.35rem">
-            <li><a href="publications.html">Economic Review 2025</a></li>
-            <li><a href="plans.html#fyp">14th Five-Year Plan documents</a></li>
-            <li><a href="plans.html#decentralised">Guidelines for local government plans</a></li>
-            <li><a href="updates.html">Tenders &amp; notices</a></li>
-            <li><a href="contact.html#rti">Right to Information</a></li>
-          </ul>
-        </div>
+        <div class="title"><small>About Kerala Plan</small><h2>Your voice in Kerala’s plans</h2></div>
+        <p><b style="color:var(--navy)">The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</b></p>
+        <p>Share a concern, an idea or an opinion on the things that shape daily life: your plate, your commute, your classroom, your hospital, your village. The State Planning Board reads it here.</p>
+        <p>Pick a topic and start the first conversation. Name your panchayat or ward so the Board can act on it.</p>
+        <div class="btns" style="margin-top:1.4rem"><a class="btn" href="forum.html#new">Share your view</a><a class="btn out" href="#how">How it works</a></div>
+        <div class="sig"><span class="seal" aria-hidden="true">LOGO</span><div><b>State Planning Board</b><span>Replies marked Official come from the Board.</span></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="sh"><div><span class="eyebrow">What we do</span><h2>Planning for every part of Kerala</h2><p>From state-wide plans to the ward in your panchayat, the Board connects evidence, budgets and people.</p></div></div>
-      <div class="g4">
-        <a class="fcard card" href="plans.html#fyp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><h3>Five-Year Plans</h3><p>Long-range priorities and sector outlays, set with working groups of experts and departments.</p><span class="more">Fourteenth Plan →</span></a>
-        <a class="fcard card" href="plans.html#annual"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Annual Plans</h3><p>Scheme-by-scheme allocations for each financial year, presented with the State Budget.</p><span class="more">Annual Plan 2026-27 →</span></a>
-        <a class="fcard card" href="plans.html#review"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h3>Economic Review</h3><p>The yearly account of Kerala’s economy placed before the Legislative Assembly.</p><span class="more">Economic Review 2025 →</span></a>
-        <a class="fcard card" href="plans.html#decentralised"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5l-5.5 4.5M12 11.5l5.5 4.5"/></svg></span><h3>Decentralised planning</h3><p>Guiding panchayats and municipalities as they plan with grama sabhas and ward sabhas.</p><span class="more">People’s Plan →</span></a>
-        <a class="fcard card" href="plans.html#evaluation"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></span><h3>Evaluation</h3><p>Independent studies of how schemes perform on the ground, feeding back into the next plan.</p><span class="more">Evaluation studies →</span></a>
-        <a class="fcard card" href="plans.html#monitoring"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></span><h3>Plan monitoring</h3><p>Tracking expenditure and physical progress of departmental and local plans.</p><span class="more">How we monitor →</span></a>
-        <a class="fcard card" href="about.html#divisions"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><h3>Expert divisions</h3><p>Specialist divisions for agriculture, social services, infrastructure, perspective planning and more.</p><span class="more">Meet the divisions →</span></a>
-        <a class="fcard card" href="participate.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z"/></svg></span><h3>Have your say</h3><p>Post a concern, idea or question. Board staff read it and reply in the thread.</p><span class="more">Join the discussion →</span></a>
+  <!-- Counters -->
+  <section class="counters" aria-label="Kerala Plan in numbers"><div class="wrap" id="counters"></div></section>
+
+  <!-- Updates + Question of the week -->
+  <section class="sec grey" id="updates">
+    <div class="wrap">
+      <div class="title row"><div><small>From the Board</small><h2>Important updates</h2></div><div id="ubtn"></div></div>
+      <div class="news">
+        <div><div id="uform"></div><div id="ulist"></div></div>
+        <aside><div class="qow" id="qow"></div></aside>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="sh"><div><span class="eyebrow">Kerala Plan · Have your say</span><h2>Browse by topic</h2><p>Share a concern, an idea or an opinion on the things that shape daily life: your plate, your commute, your classroom, your hospital, your village.</p></div><a class="btn sm primary" href="participate.html">Open the forum</a></div>
-      <div class="g3" id="topics"></div>
+  <!-- Topics -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="title c"><small>Kerala Plan</small><h2>Browse by topic</h2></div>
+      <div class="depts" id="depts"></div>
     </div>
   </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="sh"><div><span class="eyebrow">Library</span><h2>Latest publications</h2></div><a class="btn sm" href="publications.html">All publications</a></div>
-      <div class="list" id="pubs"></div>
+  <!-- Trending / Ideas -->
+  <section class="sec grey">
+    <div class="wrap">
+      <div class="two">
+        <div><div class="title"><small>Discussions</small><h2>Trending now</h2></div><div class="panel" id="trend"></div></div>
+        <div><div class="title"><small>Most upvoted</small><h2>Ideas citizens are backing</h2></div><div class="panel" id="ideas"></div></div>
+      </div>
+      <div id="board" style="margin-top:2.5rem"></div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="sh"><div><span class="eyebrow">Participation</span><h2>How Kerala Plan works</h2></div></div>
+  <!-- How it works -->
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="title c"><small>Three steps</small><h2>How Kerala Plan works</h2></div>
       <ol class="steps">
-        <li class="card"><b>Share</b><span>Post a concern, idea, opinion or question under the topic it belongs to. Name your district or ward.</span></li>
-        <li class="card"><b>Vote and discuss</b><span>Upvote what matters and reply with what you know. The most backed posts rise to the top.</span></li>
-        <li class="card"><b>Hear back</b><span>Board staff reply in the thread. Their answers carry an Official badge, and recurring themes go to the working groups.</span></li>
+        <li><b>Share</b><span>Post a concern, idea, opinion or question under the topic it belongs to. Name your district or ward.</span></li>
+        <li><b>Vote and discuss</b><span>Upvote what matters and reply with what you know. The most backed posts rise to the top.</span></li>
+        <li><b>Hear back</b><span>Board staff can reply in the thread. Their answers carry an Official badge.</span></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta"><div class="wrap">
+    <div><h2>Tell the Board what daily life looks like where you live</h2><p>Name your panchayat or ward so the Board can act on it.</p></div>
+    <a class="btn" href="forum.html#new">Share your view</a>
+  </div></section>
+
+  <!-- House rules -->
+  <section class="sec grey" id="rules">
+    <div class="wrap">
+      <div class="title c"><small>Before you post</small><h2>House rules</h2></div>
+      <ul class="rules" id="rlist"></ul>
     </div>
   </section>
 </main>
 
 <div id="site-footer"></div>
+
 <script>
 (function(){
-  var S=window.SPB,e=S.esc;
-  document.getElementById('updates').innerHTML=S.sortedUpdates().slice(0,4).map(S.updateHTML).join('');
-  var w=S.weekAsk();
-  document.getElementById('ask').innerHTML='<span class="eyebrow">Question of the week · '+e(w.name)+'</span><h3>'+e(w.ask)+'</h3><a class="btn" href="participate.html#'+w.id+'">Answer in '+e(w.name)+'</a>';
-  document.getElementById('topics').innerHTML=S.CATS.map(function(c){
-    return '<a class="tcard card" href="participate.html#'+c.id+'"><span class="th"><span class="dot" style="--h:'+c.h+'"></span><b>'+e(c.name)+'</b></span><span class="tb">'+e(c.blurb)+'</span></a>';
-  }).join('');
-  document.getElementById('pubs').innerHTML=S.PUBS.slice(0,4).map(S.pubHTML).join('');
+var K=KP,h=K.h,CATS=K.CATS,CAT=K.CAT;
+var S={posts:[],comments:[],votes:[],updates:[],showUF:false,uform:null};
+
+document.querySelector('.seal').outerHTML='<span class="seal" aria-hidden="true">'+K.LOGO+'</span>';
+
+/* static pieces */
+var tiles=document.getElementById('tiles');
+CATS.forEach(function(c){tiles.append(h('a',{class:'tile',href:'forum.html#'+c.id},K.ico(c.id),c.name));});
+var rl=document.getElementById('rlist');
+['Be specific: name the place, ward or panchayat.','Criticise schemes and decisions, not people.','Do not share phone numbers or home addresses.','Replies marked Official come from the Board.']
+  .forEach(function(r){rl.append(h('li',null,K.ico('check'),h('span',null,r)));});
+var w=K.weekAsk();
+document.getElementById('qow').append(h('small',null,'Question of the week · '+w.name),h('h3',null,w.ask),h('a',{class:'btn gold',href:'forum.html#'+w.id},'Answer in '+w.name));
+
+/* live pieces */
+function miniPost(p,extra){
+  var c=CAT[p.cat]||{name:'General'};
+  return h('a',{class:'mini',href:'forum.html#'+p.cat+'/'+p.id},
+    h('span',{class:'sc'},String(S.score[p.id]||0),h('small',null,'votes')),
+    h('span',null,h('b',null,p.title),
+      h('span',{class:'tags',style:'margin-top:.3rem'},h('span',{class:'tag'},c.name),(S.ccount[p.id]||0)+' comments · '+K.ago(p.ts)),
+      extra?h('p',null,extra):null));
+}
+function lst(id,arr,none){var c=document.getElementById(id);c.textContent='';if(!arr.length)c.append(h('p',{class:'none'},none));arr.forEach(function(p){c.append(miniPost(p))});}
+function updateNode(u){
+  var c=u.cat&&CAT[u.cat],d=new Date(u.ts);
+  return h('article',{class:'upd'+(u.pinned?' pin':'')},
+    h('div',{class:'date'},h('b',null,String(d.getDate())),h('span',null,d.toLocaleDateString('en-IN',{month:'short'})+' '+d.getFullYear())),
+    h('div',{class:'c'},
+      h('div',{class:'tags'},h('span',{class:'tag '+u.kind},u.kind||'Notice'),u.pinned?h('span',{class:'tag pinned'},'Pinned'):null,c?h('span',null,c.name):null,h('span',null,K.ago(u.ts))),
+      h('h3',null,u.title),u.body?h('p',null,u.body):null,
+      K.isStaff()?h('div',{class:'x'},h('button',{class:'lnk del',type:'button',onclick:function(){K.DB.collection('updates').doc(u.id).delete();K.toast('Update deleted.');}},'Delete')):null));
+}
+function updateForm(){
+  if(S.uform)return S.uform;
+  var kind=h('select',{id:'ukind'});K.KINDS.forEach(function(k){kind.append(h('option',{value:k},k))});
+  var cat=h('select',{id:'ucat'},h('option',{value:''},'All of Kerala'));CATS.forEach(function(c){cat.append(h('option',{value:c.id},c.name))});
+  var title=h('input',{id:'utitle',maxlength:'120',placeholder:'Headline'});
+  var body=h('textarea',{id:'ubody',maxlength:'1500',placeholder:'Details, dates and how people can take part'});
+  var pin=h('input',{type:'checkbox',id:'upin'});
+  var f=h('form',{class:'panel form',novalidate:true,style:'margin-bottom:1rem'},
+    h('div',{class:'frow'},h('div',{class:'field'},h('label',{for:'ukind'},'Type'),kind),h('div',{class:'field'},h('label',{for:'ucat'},'Topic'),cat)),
+    h('div',{class:'field'},h('label',{for:'utitle'},'Headline'),title),
+    h('div',{class:'field'},h('label',{for:'ubody'},'Details'),body),
+    h('div',{class:'factions'},h('label',{class:'chk',for:'upin',style:'margin-right:auto'},pin,'Pin to the top'),h('button',{class:'btn',type:'submit'},'Publish update')));
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();var t=title.value.trim();
+    if(t.length<4){K.toast('Add a headline of at least 4 characters.');title.focus();return;}
+    await K.DB.collection('updates').add({kind:kind.value,cat:cat.value,title:t,body:body.value.trim(),pinned:pin.checked,ts:Date.now(),author:K.UID});
+    title.value='';body.value='';pin.checked=false;S.showUF=false;K.toast('Update published.');render();
+  });
+  return S.uform=f;
+}
+function render(){
+  K.derive(S);
+  var voices={};S.posts.concat(S.comments).forEach(function(x){if(x.author)voices[x.author]=1;});
+  var ct=document.getElementById('counters');ct.textContent='';
+  [['posts',S.posts.length,'posts'],['comments',S.comments.length,'comments'],['people',Object.keys(voices).length,'citizens taking part'],['topics',CATS.length,'topics']]
+    .forEach(function(x){ct.append(h('div',{class:'counter'},K.ico(x[0]),h('b',null,String(x[1])),h('span',null,x[2])));});
+
+  var ub=document.getElementById('ubtn');ub.textContent='';
+  if(K.isStaff())ub.append(h('button',{class:'btn sm out',type:'button',onclick:function(){S.showUF=!S.showUF;render();}},S.showUF?'Close':'Post an update'));
+  var uf=document.getElementById('uform');if(!(K.isStaff()&&S.showUF))uf.textContent='';else if(!uf.firstChild)uf.append(updateForm());
+  var ul=document.getElementById('ulist');ul.textContent='';
+  var ups=S.updates.slice().sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||b.ts-a.ts});
+  if(!ups.length)ul.append(h('div',{class:'empty'},h('h3',null,'No updates yet'),h('p',null,K.isStaff()?'Publish the first notice for citizens: a consultation, a deadline or a result.':'Notices from the State Planning Board will appear here, such as consultations, deadlines and results.')));
+  else ups.slice(0,6).forEach(function(u){ul.append(updateNode(u))});
+
+  var dp=document.getElementById('depts');dp.textContent='';
+  CATS.forEach(function(c){
+    var n=S.posts.filter(function(p){return p.cat===c.id}).length;
+    dp.append(h('a',{class:'dept',href:'forum.html#'+c.id},h('span',{class:'ico'},K.ico(c.id)),h('h3',null,c.name),h('p',null,c.blurb),
+      h('span',{class:'more'},'View topic ›',h('em',null,n+(n===1?' post':' posts')))));
+  });
+
+  lst('trend',S.posts.slice().sort(function(a,b){return K.hot(S,b)-K.hot(S,a)}).slice(0,5),'No discussions yet. Start the first one.');
+  lst('ideas',S.posts.filter(function(p){return p.flair==='Idea'}).sort(function(a,b){return(S.score[b.id]||0)-(S.score[a.id]||0)||b.ts-a.ts}).slice(0,5),'Post an idea and ask others to upvote it.');
+
+  var bd=document.getElementById('board');bd.textContent='';
+  var br=S.comments.filter(function(c){return c.board}).sort(function(a,b){return b.ts-a.ts}).slice(0,3);
+  var panel=h('div',{class:'panel'});
+  br.forEach(function(c){var p=S.posts.filter(function(x){return x.id===c.post})[0];if(p)panel.append(miniPost(p,'Board reply: '+c.body));});
+  if(panel.children.length)bd.append(h('div',{class:'title'},h('small',null,'Official'),h('h2',null,'Replies from the Board')),panel);
+}
+['posts','comments','votes','updates'].forEach(function(n){K.DB.collection(n).onSnapshot(function(s){S[n]=K.docs(s);render();});});
+render();
 })();
 </script>
 </body>

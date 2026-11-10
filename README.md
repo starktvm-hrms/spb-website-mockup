@@ -1,23 +1,16 @@
-# Kerala State Planning Board — website mockup
+# Kerala Plan · State Planning Board — website mockup
 
-A static redesign mockup for the Kerala State Planning Board (spb.kerala.gov.in), built on the visual
-language and content of the *Kerala Plan* citizen-participation page (backwater green, kasavu gold,
-Bricolage Grotesque + Noto Sans / Noto Sans Malayalam).
+A government-portal style website for the State Planning Board's **Kerala Plan** citizen-participation
+platform. All text comes from the Kerala Plan reference page (`Kerala_Plan_3.html`).
 
 ## Pages
 
 | File | Content |
 | --- | --- |
-| `index.html` | Home: hero, key figures, important updates, question of the week, what the Board does, topics, latest publications |
-| `about.html` | Mandate, functions, Board structure, divisions, history |
-| `plans.html` | 14th Five-Year Plan, Annual Plans, Economic Review, decentralised planning, monitoring, evaluation |
-| `publications.html` | Filterable, searchable publications library |
-| `updates.html` | Notices, consultations, deadlines, results, tenders |
-| `participate.html` | **Kerala Plan · Have your say** forum (posts, votes, threaded comments, Official Board replies) |
-| `contact.html` | Contact form, office address, RTI |
+| `index.html` | Home: hero, topic quick-access tiles, about Kerala Plan, counters, important updates, question of the week, browse by topic, trending now, ideas citizens are backing, replies from the Board, how it works, house rules |
+| `forum.html` | Discussions: all posts or one topic (`#water`, `#health`, …), new post (`#new`), votes, threaded comments, Official Board replies |
 
-Shared header, footer and content data live in `assets/site.js`; styles in `assets/style.css`.
-Light and dark themes are supported (follows the system, with a toggle in the top bar).
+Shared header, footer, topic data and the data store are in `assets/common.js`; styles in `assets/gov.css`.
 
 ## Running
 
@@ -27,14 +20,10 @@ No build step. Open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8000
 ```
 
-## Before launch
+## Demo notes
 
-- The forum stores posts in the browser (`localStorage`) for demo purposes. Replace `LocalDB` in
-  `participate.html` with a real backend; it uses the same `collection().add / doc().set / delete /
-  onSnapshot` API as the original Kerala Plan page.
-- Notices and publications in `assets/site.js` are sample entries; replace them with real ones and link
-  the PDFs.
-- Names of the Vice Chairperson, members and Member Secretary, phone numbers, email addresses and RTI
-  officers are deliberately left as placeholders; fill them from the official notification and directory.
-- The old site could not be reached while this mockup was built, so its menu and text should be checked
-  against it.
+- Posts, comments, votes and updates are saved in the visitor's browser (`localStorage`). Replace `DB` in
+  `assets/common.js` with a real backend to go live; it keeps the same `collection().add / doc().set /
+  delete / onSnapshot` API as the original page.
+- Tick **Preview as Board staff** in the forum sidebar to publish updates on the home page and post
+  Official replies.

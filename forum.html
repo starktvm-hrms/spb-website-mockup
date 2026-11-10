@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kerala Plan Discussions</title>
+<meta name="description" content="Share a concern, an idea or an opinion with the State Planning Board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/gov.css">
+<script src="assets/common.js"></script>
+<style>
+.fl{display:grid;grid-template-columns:18rem minmax(0,1fr);gap:2rem;align-items:start;padding-block:3rem 4rem}
+.sidebar{display:grid;gap:1.4rem;position:sticky;top:7.4rem}
+.tlist{list-style:none;margin:0;padding:0}
+.tlist a{display:flex;align-items:center;gap:.7rem;padding:.75rem 1.1rem;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem;border-left:4px solid transparent}
+.tlist li:last-child a{border-bottom:0}
+.tlist a:hover{background:var(--bg-2)}
+.tlist a[aria-current="page"]{background:var(--bg-2);border-left-color:var(--gold);color:var(--navy)}
+.tlist svg{width:1.25rem;height:1.25rem;color:var(--navy-3);flex:none}
+.tlist .n{margin-left:auto;background:var(--navy);color:#fff;font:700 .7rem/1 var(--head);padding:.3rem .45rem;min-width:1.6rem;text-align:center}
+.sidebar .panel .pad{padding:1.1rem 1.2rem}
+.sidebar .panel p{margin:0;color:var(--muted);font-size:.92rem}
+.sidebar ul.r{margin:0;padding:1rem 1.2rem 1rem 2.3rem;color:var(--muted);font-size:.9rem}
+.sidebar ul.r li{margin-bottom:.45rem}
+.sidebar .chk{margin-top:.7rem}
+@media (max-width:960px){
+  .fl{grid-template-columns:1fr;padding-block:1.5rem 3rem}
+  .sidebar{position:static;order:2}
+  .sidebar .topicsp{order:-1}
+}
+.fhead{background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);padding:1.5rem 1.6rem;margin-bottom:1.2rem;display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.2rem;align-items:start}
+.fhead .ico{width:3.6rem;height:3.6rem;background:var(--navy);color:var(--gold);display:grid;place-items:center}
+.fhead .ico svg{width:2rem;height:2rem}
+.fhead h2{font:800 1.4rem/1.2 var(--head);color:var(--navy);margin:0 0 .3rem;text-transform:uppercase}
+.fhead p{margin:0;color:var(--muted)}
+.asks{grid-column:1/-1;background:#fff8e6;border-left:4px solid var(--gold);padding:.9rem 1.1rem;font-weight:600;color:var(--navy)}
+.asks span{display:block;font:700 .7rem/1 var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2);margin-bottom:.4rem}
+.composer{background:#fff;border:1px solid var(--line);margin-bottom:1.2rem}
+.composer .open{display:flex;align-items:center;gap:.8rem;width:100%;text-align:left;border:0;background:#fff;padding:1.1rem 1.2rem;color:var(--muted);font-size:.95rem}
+.composer .open svg{width:1.4rem;height:1.4rem;color:var(--navy-3)}
+.composer .open:hover{background:var(--bg-2)}
+.seg{display:flex;flex-wrap:wrap;border:1px solid #c5cdd9;width:max-content;max-width:100%}
+.seg button{border:0;border-left:1px solid #c5cdd9;background:#fff;padding:.6rem 1rem;font:700 .74rem/1 var(--head);letter-spacing:.05em;text-transform:uppercase;color:var(--navy)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.sbar{display:flex;align-items:stretch;background:#fff;border:1px solid var(--line);margin-bottom:1.2rem;flex-wrap:wrap}
+.sbar .lab{display:flex;align-items:center;padding:0 1rem;font:700 .7rem/1 var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--line)}
+.sbar .tab{border:0;border-right:1px solid var(--line);background:#fff;padding:.9rem 1.2rem;font:700 .76rem/1 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.sbar .tab[aria-pressed="true"]{background:var(--navy);color:#fff;box-shadow:inset 0 -3px 0 var(--gold)}
+.sbar input{flex:1 1 12rem;min-width:0;border:0;padding:.8rem 1rem;background:#fff}
+.sbar input:focus{outline:none;box-shadow:inset 0 -3px 0 var(--gold)}
+@media (max-width:560px){.sbar .lab{display:none}.sbar input{flex-basis:100%;border-top:1px solid var(--line)}}
+.post{display:grid;grid-template-columns:3.6rem minmax(0,1fr);background:#fff;border:1px solid var(--line);margin-bottom:1rem}
+.post.open{border-color:#b9c3d1;box-shadow:0 10px 24px rgba(11,37,69,.08)}
+.vote{display:flex;flex-direction:column;align-items:center;gap:.15rem;padding:1rem 0;background:var(--bg-2);border-right:1px solid var(--line);font:800 1rem var(--head);color:var(--navy)}
+.vote button,.cv button{border:0;background:none;padding:.2rem .4rem;color:#8a95a5;line-height:0}
+.vote button svg{width:1rem;height:1rem}
+.vote button:hover,.cv button:hover{color:var(--navy)}
+.vote button[aria-pressed="true"].up,.cv button[aria-pressed="true"].up{color:var(--ok)}
+.vote button[aria-pressed="true"].down,.cv button[aria-pressed="true"].down{color:var(--danger)}
+.pb{padding:1.1rem 1.3rem 1rem;min-width:0}
+.flair{font:700 .66rem/1 var(--head);letter-spacing:.08em;text-transform:uppercase;padding:.3rem .5rem;border:1px solid currentColor}
+.flair.Concern{color:var(--danger)}.flair.Idea{color:var(--ok)}.flair.Opinion{color:var(--muted)}.flair.Question{color:var(--gold-2)}
+.post h3{font:700 1.12rem/1.35 var(--head);color:var(--navy);margin:.55rem 0 .4rem;overflow-wrap:anywhere}
+.body{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:#3a4553}
+.body.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pf{display:flex;gap:1.2rem;margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--line)}
+.thread{margin-top:1rem;display:grid;gap:1rem}
+.cm{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.1rem .8rem}
+.cv{display:flex;flex-direction:column;align-items:center;font:700 .8rem var(--head);color:var(--muted)}
+.cv svg{width:.85rem;height:.85rem}
+.cm .who{font:700 .85rem var(--head);color:var(--navy)}
+.cm p{margin:.15rem 0 .3rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.cm.official>div:last-child>.cbody{background:#fff8e6;border-left:3px solid var(--gold);padding:.6rem .8rem}
+.cm .replies{grid-column:2;display:grid;gap:.9rem;margin-top:.6rem;padding-left:1rem;border-left:2px solid var(--line)}
+.cm .acts{display:flex;gap:1rem}
+.cform{display:grid;gap:.6rem}
+.cform textarea{width:100%;min-height:4.6rem;padding:.7rem .8rem;border:1px solid #c5cdd9;border-radius:2px;resize:vertical}
+.official-badge{background:var(--gold);color:var(--navy);font:800 .62rem/1 var(--head);letter-spacing:.08em;text-transform:uppercase;padding:.28rem .45rem}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main id="main">
+  <section class="pbanner"><div class="wrap">
+    <h1 id="ptitle-h">All posts</h1>
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <span id="crumb">All posts</span></div>
+  </div></section>
+
+  <div class="wrap fl">
+    <aside class="sidebar">
+      <div class="panel topicsp"><h3>Topics</h3><ul class="tlist" id="tnav"></ul></div>
+      <div class="panel"><h3>About Kerala Plan</h3><div class="pad"><p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p></div></div>
+      <div class="panel"><h3>House rules</h3><ul class="r"><li>Be specific: name the place, ward or panchayat.</li><li>Criticise schemes and decisions, not people.</li><li>Do not share phone numbers or home addresses.</li><li>Replies marked Official come from the Board.</li></ul></div>
+      <div class="panel"><h3>Demo mode</h3><div class="pad"><p>This mockup saves posts in your browser only.</p><label class="chk"><input type="checkbox" id="staff"> Preview as Board staff</label></div></div>
+    </aside>
+    <div style="min-width:0">
+      <section class="fhead" id="head"></section>
+      <section class="composer" id="composer"></section>
+      <div class="sbar" id="bar"></div>
+      <div id="feed"></div>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+
+<script>
+(function(){
+var K=KP,h=K.h,CATS=K.CATS,CAT=K.CAT,DB=K.DB;
+var S={posts:[],comments:[],votes:[],ready:false,route:'all',sort:'hot',q:'',open:{},replying:null,drafts:{},asBoard:false,flair:'Concern',composing:false,score:{},mine:{},ccount:{}};
+function $(s){return document.querySelector(s)}
+function who(id){return id===K.UID?'You':'A citizen';}
+function canMod(x){return x.author===K.UID||K.isStaff();}
+
+var pending=false;
+function render(){
+  var a=document.activeElement;
+  if(a&&(a.tagName==='TEXTAREA'||a.tagName==='INPUT')&&$('#feed').contains(a)){if(!pending){pending=true;setTimeout(function(){pending=false;render()},900);}return;}
+  K.derive(S);renderNav();renderHead();renderBar();renderFeed();renderComposer();
+}
+async function vote(t,val){var ref=DB.collection('votes').doc(t+'__'+K.UID);if(S.mine[t]===val)await ref.delete();else await ref.set({t:t,u:K.UID,v:val});}
+async function addComment(post,parent,text,board){
+  text=text.trim();if(text.length<2){K.toast('Write a comment first.');return false;}
+  await DB.collection('comments').add({post:post,parent:parent||null,body:text.slice(0,2000),author:K.UID,ts:Date.now(),board:!!(board&&K.isStaff())});return true;
+}
+async function delPost(p){
+  await Promise.all(S.comments.filter(function(c){return c.post===p.id}).map(function(c){return DB.collection('comments').doc(c.id).delete()}));
+  await DB.collection('posts').doc(p.id).delete();K.toast('Post deleted.');
+}
+async function delComment(c){
+  await Promise.all(S.comments.filter(function(x){return x.parent===c.id}).map(function(x){return DB.collection('comments').doc(x.id).delete()}));
+  await DB.collection('comments').doc(c.id).delete();
+}
+
+function renderNav(){
+  var counts={all:S.posts.length};S.posts.forEach(function(p){counts[p.cat]=(counts[p.cat]||0)+1;});
+  var nav=$("#tnav");nav.textContent='';
+  nav.append(h('li',null,h('a',{href:'#all','aria-current':S.route==='all'?'page':null},K.ico('posts'),'All posts',h('span',{class:'n'},String(counts.all||0)))));
+  CATS.forEach(function(c){nav.append(h('li',null,h('a',{href:'#'+c.id,'aria-current':S.route===c.id?'page':null},K.ico(c.id),c.name,h('span',{class:'n'},String(counts[c.id]||0)))));});
+}
+function renderHead(){
+  var hd=$('#head');hd.textContent='';
+  var c=CAT[S.route],name=c?c.name:'All posts';
+  $('#ptitle-h').textContent=name;$('#crumb').textContent=name;document.title=name+' · Kerala Plan';
+  if(!c)hd.append(h('span',{class:'ico'},K.ico('posts')),h('div',null,h('h2',null,'All posts'),h('p',null,'Share a concern, an idea or an opinion on the things that shape daily life: your plate, your commute, your classroom, your hospital, your village. The State Planning Board reads it here.')));
+  else hd.append(h('span',{class:'ico'},K.ico(c.id)),h('div',null,h('h2',null,c.name),h('p',null,c.blurb)),h('div',{class:'asks'},h('span',null,'Question for you'),c.ask));
+}
+function renderBar(){
+  var bar=$('#bar');
+  if(!bar.dataset.built){
+    bar.dataset.built='1';bar.append(h('span',{class:'lab'},'Sort'));
+    [['hot','Hot'],['new','New'],['top','Top']].forEach(function(s){bar.append(h('button',{class:'tab',type:'button','data-s':s[0],onclick:function(){S.sort=s[0];render();}},s[1]));});
+    var q=h('input',{type:'search',placeholder:'Search posts, places, topics','aria-label':'Search posts'});
+    q.addEventListener('input',function(){S.q=q.value.trim();K.derive(S);renderFeed();});bar.append(q);
+  }
+  bar.querySelectorAll('.tab').forEach(function(b){b.setAttribute('aria-pressed',String(S.sort===b.dataset.s))});
+}
+function visible(){
+  var L=S.posts.filter(function(p){return S.route==='all'||p.cat===S.route;});
+  if(S.q){var q=S.q.toLowerCase();L=L.filter(function(p){return((p.title||'')+' '+(p.body||'')+' '+(p.district||'')).toLowerCase().indexOf(q)>-1;});}
+  function sc(p){return S.score[p.id]||0}
+  if(S.sort==='new')L.sort(function(a,b){return b.ts-a.ts});
+  else if(S.sort==='top')L.sort(function(a,b){return sc(b)-sc(a)||b.ts-a.ts});
+  else L.sort(function(a,b){return K.hot(S,b)-K.hot(S,a)});
+  return L;
+}
+function voteBox(id,cls){
+  var m=S.mine[id]||0;
+  var up=h('button',{class:'up',type:'button','aria-label':'Upvote','aria-pressed':String(m===1),onclick:function(){vote(id,1)},html:K.ICON.up});
+  var dn=h('button',{class:'down',type:'button','aria-label':'Downvote','aria-pressed':String(m===-1),onclick:function(){vote(id,-1)},html:K.ICON.down});
+  return h('div',{class:cls},up,h('span',{'aria-label':'Score'},String(S.score[id]||0)),dn);
+}
+function commentForm(post,parent,key,ph){
+  var ta=h('textarea',{placeholder:ph,'aria-label':ph,maxlength:'2000'});ta.value=S.drafts[key]||'';
+  ta.addEventListener('input',function(){S.drafts[key]=ta.value;});
+  var chk=K.isStaff()?h('label',{class:'chk',style:'margin-right:auto'},h('input',{type:'checkbox',checked:S.asBoard,onchange:function(e){S.asBoard=e.target.checked}}),'Reply as State Planning Board'):null;
+  var btn=h('button',{class:'btn sm',type:'button',onclick:async function(){
+    btn.disabled=true;var ok=await addComment(post,parent,ta.value,S.asBoard);btn.disabled=false;
+    if(ok){S.drafts[key]='';ta.value='';ta.blur();if(parent)S.replying=null;render();}
+  }},parent?'Reply':'Comment');
+  return h('div',{class:'cform'},ta,h('div',{class:'factions'},chk,btn));
+}
+function commentNode(c,post){
+  var kids=S.comments.filter(function(x){return x.parent===c.id}).sort(function(a,b){return a.ts-b.ts});
+  var head=h('div',{class:'tags'},h('span',{class:'who'},c.board?'State Planning Board':who(c.author)),c.board?h('span',{class:'official-badge'},'Official'):null,h('span',null,K.ago(c.ts)));
+  var acts=h('div',{class:'acts'});
+  if(!c.parent)acts.append(h('button',{class:'lnk',type:'button',onclick:function(){S.replying=(S.replying===c.id?null:c.id);render();}},'Reply'));
+  if(canMod(c))acts.append(h('button',{class:'lnk del',type:'button',onclick:function(){delComment(c)}},'Delete'));
+  var box=h('div',{class:'cm'+(c.board?' official':'')},voteBox(c.id,'cv'),h('div',null,head,h('div',{class:'cbody'},h('p',null,c.body)),acts));
+  var rep=h('div',{class:'replies'});
+  kids.forEach(function(k){rep.append(commentNode(k,post));});
+  if(S.replying===c.id)rep.append(commentForm(post.id,c.id,'r:'+c.id,'Write a reply'));
+  if(rep.children.length)box.append(rep);
+  return box;
+}
+function postNode(p){
+  var c=CAT[p.cat]||{name:'General'},open=!!S.open[p.id],n=S.ccount[p.id]||0;
+  var meta=h('div',{class:'tags'},
+    h('a',{class:'tag',href:'#'+p.cat,style:'text-decoration:none'},c.name),
+    h('span',{class:'flair '+(p.flair||'Opinion')},p.flair||'Opinion'),
+    p.district?h('span',null,p.district):null,
+    h('span',null,who(p.author)+' · '+K.ago(p.ts)));
+  var pf=h('div',{class:'pf'},
+    h('button',{class:'lnk',type:'button','aria-expanded':String(open),onclick:function(){S.open[p.id]=!open;render();}},n+(n===1?' comment':' comments')),
+    canMod(p)?h('button',{class:'lnk del',type:'button',onclick:function(){delPost(p)}},'Delete'):null);
+  var pb=h('div',{class:'pb'},meta,h('h3',null,p.title),p.body?h('p',{class:'body'+(open?'':' clamp')},p.body):null,pf);
+  if(open){
+    var th=h('div',{class:'thread'});th.append(commentForm(p.id,null,'c:'+p.id,'Add a comment'));
+    S.comments.filter(function(x){return x.post===p.id&&!x.parent}).sort(function(a,b){return a.ts-b.ts}).forEach(function(x){th.append(commentNode(x,p));});
+    pb.append(th);
+  }
+  return h('article',{class:'post'+(open?' open':''),id:'post-'+p.id},voteBox(p.id,'vote'),pb);
+}
+function renderFeed(){
+  var f=$('#feed');f.textContent='';if(!S.ready)return;
+  var L=visible();
+  if(!L.length){
+    var c=CAT[S.route];
+    if(S.q)f.append(h('div',{class:'empty'},h('h3',null,'No matches'),h('p',null,'Nothing matches “'+S.q+'”. Try a place name or a shorter word.')));
+    else f.append(h('div',{class:'empty'},h('h3',null,c?'No posts in '+c.name+' yet':'No posts yet'),
+      h('p',null,c?c.ask+' Be the first to answer.':'Pick a topic and start the first conversation. Name your panchayat or ward so the Board can act on it.'),
+      h('div',{style:'margin-top:1.2rem'},h('button',{class:'btn',type:'button',onclick:openComposer},'Write a post'))));
+    return;
+  }
+  L.forEach(function(p){f.append(postNode(p));});
+}
+
+function openComposer(){S.composing=true;renderComposer();var t=$('#ptitle');if(t){t.focus();$('#composer').scrollIntoView({block:'start'});}}
+var F={};
+function renderComposer(){
+  var box=$('#composer');
+  if(!S.composing){
+    if(box.dataset.mode==='closed')return;
+    box.textContent='';box.dataset.mode='closed';
+    box.append(h('button',{class:'open',type:'button',onclick:openComposer},K.ico('posts'),'Share a concern, idea or opinion…'));return;
+  }
+  if(box.dataset.mode==='open'){var sel=$('#pcat');if(sel&&S.route!=='all'&&!F.touched)sel.value=S.route;return;}
+  box.dataset.mode='open';box.textContent='';
+  var cat=h('select',{id:'pcat'});CATS.forEach(function(c){cat.append(h('option',{value:c.id},c.name));});
+  cat.value=S.route!=='all'?S.route:'water';cat.addEventListener('change',function(){F.touched=true});
+  var dist=h('select',{id:'pdist'},h('option',{value:''},'Not specified'));K.DISTRICTS.forEach(function(d){dist.append(h('option',{value:d},d));});
+  var title=h('input',{id:'ptitle',maxlength:'140',placeholder:'A clear, specific title'});
+  var body=h('textarea',{id:'pbody',maxlength:'4000',placeholder:'What is happening, where, and what would you like the Board to consider?'});
+  var seg=h('div',{class:'seg',role:'group','aria-label':'Type of post'});
+  function paintSeg(){seg.textContent='';K.FLAIRS.forEach(function(f){seg.append(h('button',{type:'button','aria-pressed':String(S.flair===f),onclick:function(){S.flair=f;paintSeg();}},f));});}
+  paintSeg();
+  var form=h('form',{class:'form',novalidate:true},
+    h('div',{class:'frow'},h('div',{class:'field'},h('label',{for:'pcat'},'Topic'),cat),h('div',{class:'field'},h('label',{for:'pdist'},'District'),dist)),
+    h('div',{class:'field'},h('label',null,'Type'),seg),
+    h('div',{class:'field'},h('label',{for:'ptitle'},'Title'),title),
+    h('div',{class:'field'},h('label',{for:'pbody'},'Details'),body),
+    h('div',{class:'factions'},h('span',{class:'hint'},'Posts are visible to everyone with access to this page.'),
+      h('button',{class:'btn out',type:'button',onclick:function(){S.composing=false;F.touched=false;renderComposer();}},'Cancel'),h('button',{class:'btn',type:'submit'},'Post')));
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();var t=title.value.trim();
+    if(t.length<6){K.toast('Add a short title of at least 6 characters.');title.focus();return;}
+    await DB.collection('posts').add({cat:cat.value,flair:S.flair,title:t,body:body.value.trim(),district:dist.value,author:K.UID,ts:Date.now()});
+    K.toast('Posted to '+CAT[cat.value].name+'.');
+    var target=cat.value;S.composing=false;F.touched=false;if(document.activeElement)document.activeElement.blur();
+    if(S.route!=='all'&&S.route!==target)location.hash='#'+target;else render();
+    renderComposer();
+  });
+  box.append(form);
+}
+
+function route(){
+  var r=location.hash.slice(1).split('/');
+  if(r[0]==='new'){S.route='all';render();openComposer();return;}
+  S.route=CAT[r[0]]?r[0]:'all';
+  if(r[1])S.open[r[1]]=true;
+  render();
+  if(r[1]){var el=document.getElementById('post-'+r[1]);if(el)el.scrollIntoView({block:'start'});}
+}
+addEventListener('hashchange',route);
+var st=$('#staff');st.checked=K.isStaff();st.addEventListener('change',function(){K.setStaff(st.checked);render();});
+['posts','comments','votes'].forEach(function(n){DB.collection(n).onSnapshot(function(s){S[n]=K.docs(s);if(n==='posts'&&!S.ready){S.ready=true;route();return;}render();});});
+route();
+})();
+</script>
+</body>
+</html>
