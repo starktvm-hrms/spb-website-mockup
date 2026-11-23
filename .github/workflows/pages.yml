@@ -28,6 +28,11 @@ jobs:
           mkdir _site
           cp -r *.html assets plan-keralam.zip _site/
           touch _site/.nojekyll
+      - name: Add version to asset links (cache busting)
+        run: |
+          V=$(git rev-parse --short HEAD)
+          find _site -maxdepth 2 \( -name '*.html' -o -name '*.js' \) -print0 | xargs -0 sed -i -E "s#(assets/[A-Za-z0-9_./-]+\.(css|js|png|jpg|webp|svg))#\1?v=$V#g"
+          grep -o 'assets/[^"]*?v=[a-f0-9]*' _site/index.html | head -5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
