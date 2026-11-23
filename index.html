@@ -6,9 +6,10 @@
 <title>Plan Keralam · State Planning Board</title>
 <meta name="description" content="Plan Keralam: a public forum where citizens share concerns, ideas and opinions with the Kerala State Planning Board.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Instrument+Serif:ital@1&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/gov.css">
 <link rel="stylesheet" href="assets/forum.css">
+<link rel="stylesheet" href="assets/pulse.css">
 <script src="assets/common.js"></script>
 </head>
 <body>
@@ -16,11 +17,26 @@
 
 <main id="main">
   <!-- Hero (first fold) -->
-  <section class="hero" id="top">
+  <!-- First fold: Public Pulse -->
+  <section class="pulse" id="top" aria-labelledby="pulse-title">
+    <div class="wrap">
+      <div class="pulse-copy">
+        <p class="pulse-eye">Public Pulse · Demo questions</p>
+        <h1 id="pulse-title">What should Kerala <em>focus on next?</em></h1>
+        <p class="pulse-lead">Choose a topic, answer three quick questions, and see how your choices change the result in this preview.</p>
+        <div class="pulse-links"><a href="contact.html">Find support</a><a href="plans.html">Understand the plans</a></div>
+        <p class="pulse-note">Illustrative results · no public vote is submitted</p>
+      </div>
+      <div class="pcard" id="pulse-card" aria-live="off"></div>
+    </div>
+  </section>
+
+  <!-- Second fold: Kerala, planned together -->
+  <section class="hero" id="plan">
     <img class="bg" src="assets/img/hero-kerala.jpg" alt="" style="object-position:right center">
     <div class="wrap">
       <span class="kick">State Planning Board</span>
-      <h1>Kerala, planned together</h1>
+      <h2 class="hero-h">Kerala, planned together</h2>
       <p class="ml" lang="ml">കേരള പ്ലാൻ</p>
       <p class="lead">The State Planning Board shapes the roads you travel, the schools your children attend, the water you drink and the hospitals you rely on. Tell it what daily life looks like where you live.</p>
       <div class="btns">
@@ -93,6 +109,7 @@
 </main>
 
 <div id="site-footer"></div>
+<script src="assets/pulse.js" defer></script>
 
 <script>
 (function(){

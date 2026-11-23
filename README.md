@@ -10,7 +10,7 @@ hero image and Board posts use the campaign artwork in `assets/img/`.
 
 | File | Content |
 | --- | --- |
-| `index.html` | **The forum.** Hero with topic tiles, Discussion / Board updates / About tabs, topics, composer, feed with Like · Comment · Share, threaded comments, Official Board replies, question of the week |
+| `index.html` | **First fold:** Public Pulse demo poll (4 topics × 3 questions, live tallies, optional voice note kept in the tab). **Below:** hero with topic tiles, then the forum with Discussion / Board updates / About tabs, topics, composer, feed with Like · Comment · Share, threaded comments, Official Board replies, question of the week |
 | `about.html`, `plans.html`, `publications.html`, `notices.html`, `contact.html` | State Planning Board information pages, linked from the footer |
 | `forum.html` | Redirects to `index.html` (old links) |
 
