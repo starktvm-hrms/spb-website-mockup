@@ -462,3 +462,12 @@ body{background:#fff}
 }
 @media (max-width:560px){.logo img{height:2.8rem}}
 @media (max-width:760px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none;white-space:nowrap}}
+/* SPB logo */
+.logo img.spb{height:auto;width:min(26rem,100%);max-height:none}
+.flogo{background:#fff;padding:.7rem .9rem;border-radius:.4rem;display:inline-flex}
+.ftr .logo img.spb{height:auto;width:20rem;max-width:100%}
+@media (max-width:1240px){.hdr .logo img.spb{width:20rem}}
+@media (max-width:1060px){.hdr .logo img.spb{width:22rem}}
+@media (max-width:560px){.hdr .logo{flex:1 1 auto;min-width:0}.hdr .logo img.spb{width:100%;max-width:15rem}}
+@media (min-width:1061px) and (max-width:1360px){.hdr .logo img.spb{width:17.5rem}}
+.hdr{border-bottom-color:#bda59b}
