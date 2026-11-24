@@ -149,3 +149,5 @@
 .pc-next{background:#2b2f2d}
 .pc-next:hover{background:#c0573f}
 .pc-status{color:#7a5f55}
+.pulse-logo{display:block;width:15rem;max-width:70%;height:auto;margin:0 0 1.8rem}
+@media (max-width:560px){.pulse-logo{width:11rem;margin-bottom:1.3rem}}

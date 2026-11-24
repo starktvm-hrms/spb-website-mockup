@@ -185,7 +185,7 @@ function header(){
       '<button type="button" data-fs="13px" aria-label="Smaller text">A-</button><button type="button" data-fs="15px" aria-label="Default text size">A</button><button type="button" data-fs="17px" aria-label="Larger text">A+</button></div>'+
   '</div></div>'+
   '<header class="hdr"><div class="wrap">'+
-    '<a class="logo" href="index.html" aria-label="Keralam State Planning Board · Plan Keralam home"><img class="combo" src="assets/img/logo-spb-plankeralam.png" alt="Keralam State Planning Board · Plan Keralam"></a>'+
+    '<a class="logo" href="index.html" aria-label="Keralam State Planning Board home"><img class="spb" src="assets/img/logo-spb.png" alt="Keralam State Planning Board" width="483" height="51"></a>'+
     '<a class="hbtn m" href="index.html#new" aria-label="New post">+ Post</a>'+
     '<button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>'+
     '<nav class="nav" id="nav" aria-label="Main"><ul>'+items+'</ul></nav>'+
@@ -195,7 +195,8 @@ function header(){
 function footer(){
   var t=CATS.map(function(c){return '<li><a href="index.html#topic/'+c.id+'">'+c.name+'</a></li>'}).join('');
   return '<footer class="ftr"><div class="wrap top">'+
-    '<div><a class="logo flogo" href="index.html" aria-label="Keralam State Planning Board · Plan Keralam home"><img class="combo" src="assets/img/logo-spb-plankeralam.png" alt="Keralam State Planning Board · Plan Keralam"></a>'+
+    '<div><a class="logo flogo" href="index.html" aria-label="Keralam State Planning Board home"><img class="spb" src="assets/img/logo-spb.png" alt="Keralam State Planning Board" width="483" height="51"></a>'+
+      '<p style="margin-top:1.2rem"><img src="assets/img/logo-plankeralam-tft-light.png" alt="Plan Keralam: Together for tomorrow" width="593" height="259" style="height:4.2rem;width:auto;display:block"></p>'+
       '<p>The State Planning Board shapes roads, schools, hospitals, water and more. This is where you tell it what daily life looks like on the ground.</p>'+
       '<p style="font-size:.85rem">Kerala State Planning Board, Pattom, Thiruvananthapuram, Kerala 695 004 · 0471 254 0208</p></div>'+
     '<div><h4>Plan Keralam</h4><ul><li><a href="index.html#all">Discussion</a></li><li><a href="index.html#new">Share your view</a></li><li><a href="index.html#updates">Board updates</a></li><li><a href="index.html#about-how">How it works</a></li><li><a href="index.html#about-rules">House rules</a></li></ul></div>'+
